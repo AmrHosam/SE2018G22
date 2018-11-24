@@ -86,6 +86,14 @@
               font-size: 25px;
               color: #FFFAFA !important;
               margin-left: 50px;
+              
+          }
+          .nav-item:hover{
+              cursor: pointer;
+              color: black !important;
+          }
+          .fa:hover{
+              color: black !important; 
           }
           #sign{
             margin-bottom: 30px;  
@@ -138,17 +146,7 @@
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
      
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          notification
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
+      
          <li class="nav-item">
         <a class="nav-link" href="#">contact us</a>
       </li>
@@ -157,9 +155,16 @@
       </li>
     </ul>
           
-        <form class="form-inline my-2 my-lg-0" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <li class="nav-item">
-        <i class="fa fa-bell-o" style="font-size:40px;color:white"></i>
+        <form  class="nav-item dropdown">
+            
+        <li class="nav-item" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+        <i class="fa fa-bell-o" style="font-size:30px;color:white"></i>
       </li>
     </form>
     <form class="form-inline my-2 my-lg-0">
