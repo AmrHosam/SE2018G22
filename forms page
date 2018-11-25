@@ -90,7 +90,7 @@
               float: left;
           }
           .navbar{
-              background-color: #800000 !important;
+              background-color: #3f4448 !important;
               height: 75px;
 			  			  font-family:serif;
 
@@ -279,6 +279,16 @@
       <input type="text" class="form-control" id="inputZip">
     </div>
   </div>
+   <div class="form-group carneh" dir="rtl" >
+  <div class="form-group row edge" dir="rtl">
+      <label for="inputZip" >شهادة الميلاد</label>
+	  </div>
+  <div class="custom-file">
+  <input type="file" class="custom-file-input" id="customFile">
+  <label class="custom-file-label" for="customFile">Choose file</label>
+</div>
+  </div>
+  
  <div class="form-group row edge" dir="rtl">
   <button type="submit" class="btn btn-primary">تأكيد</button>
   </div>
@@ -288,7 +298,18 @@
 function showDiv() {
    document.getElementById('welcomeDiv').style.display = "block";
 }
-$("")
+$(function() { 
+   
+    $('#exampleFormControlSelect1').change(function(){
+        if($('#exampleFormControlSelect1').val() == '1') {
+
+            $('.carneh').show();
+        } else {
+            $('.carneh').hide(); 
+        } 
+    });
+});	
+
 </script>
 </div>
  
