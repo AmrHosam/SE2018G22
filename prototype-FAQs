@@ -94,7 +94,7 @@
               float: left;
           }
           .navbar{
-              background-color: #800000 !important;
+              background-color: #3f4448 !important;
               height: 75px;
 			  			  font-family:serif;
 
@@ -136,7 +136,8 @@ font-color:black;
 	  .card-header{background-color:white;}
 	  .card-body {background-color:#f0f2f3;}
 	  .answer{background-color:#f0f2f3;}
-	  .btn{text-decoration:none !important;}
+	  .btn{text-decoration:none !important;
+	  font-color:#3f4448 !important;}
   </style>
     
   <body>
@@ -185,7 +186,7 @@ font-color:black;
 <div dir="rtl" class="container" style="margin-top:70px" style="opacity:0.2"> 
 
 <div>
-<h1 style="text-align:center ;margin-bottom:20px">FAQs</h1>
+<h1 style="text-align:center ;margin-bottom:20px;font-size:300%;color:#3f4448" >FAQs</h1>
 </div>
 
 
