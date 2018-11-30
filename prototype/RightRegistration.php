@@ -1,3 +1,4 @@
+<?php 	include_once('navIndex.html');?>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 
@@ -155,6 +156,8 @@ body{
     padding-bottom: 3px;
     border-radius: 5px;
     height: 40px;
+    font-size: 17px;
+    font-weight: 400;
    }
 	
 }	 
@@ -163,7 +166,7 @@ body{
 </head>
     
 <body>
- <div style="background-color: gray; border-radius: 25px; padding-left: 20px; padding-bottom: 20px;display: block;margin: auto;margin-top: 50px;" class="container">
+ <div style="background-color: gray; border-radius: 25px; padding-left: 20px; padding-bottom: 20px;display: block;margin: auto;margin-top: 50px;margin-bottom: 50px;" class="container">
     
  <!---heading---->
      <h1 class="heading" style="text-align: center; font-weight: 700;"> Registration-Form</h1><hr></hr>
@@ -252,7 +255,7 @@ body{
                       </select>
                          </p>
                     <div class="col-sm-12">
-     <button style="display: block; margin: auto; margin-top: 20px; border-radius: 10px; border-color:#800000;background-color: transparent;width: 80px; height: 40px;color: white;" type="submit">Submit</button>
+     <button style="display: block; margin: auto; margin-top: 20px; border-radius: 10px; border-color:#800000;background-color: transparent;width: 90px; height: 40px;color: white; font-weight: 400;font-size: 20px;" type="submit">Submit</button>
 		  </div>
                  </form>
 </div>
