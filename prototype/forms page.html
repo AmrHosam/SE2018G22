@@ -184,11 +184,12 @@
     <label for="exampleFormControlSelect1" dir="ltr" style="margin-right:10px">choose your request | اختر طلبك</label>
    
 	<select lang="ar" class="form-control form-control-lg" id="exampleFormControlSelect1" rows="3">
-     <option value="1">شهادة تخرج</option>
-  <option value="2">كارنيه</option>
+     <option value="1">بيان درجات</option>
+  <option value="2">كارنيه بدل فاقد</option>
   <option value="3">كارنيه مترو</option>
- <option value="5">شهادة قيد</option>
-   <option value="4">اخر</option>
+ <option value="4">شهادة قيد</option>
+   <option value="5">تأجيل امتحانات</option>
+   <option value="6">شهادة تخرج</option>
     </select>
 	
   </div>
@@ -215,14 +216,14 @@
  <div id="welcomeDiv"  style="display:none;" class="answer_list" >
 <form> 
  <div class="form-row" >
-    <div class="form-group col-md-6" >
+    <div class="form-group col-md-6" id="arabic" >
 	<div class="form-group row edge" dir="rtl" >
       <label for="inputEmail4" >الاسم باللغة العربية</label> 
 	  </div>
 	  
       <input type="email" class="form-control" id="inputEmail4" >
  </div>
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-6 qeid">
 	<div class="form-group row edge" dir="rtl">
       <label for="inputEmail4">الاسم باللغة الانجليزية</label>
       </div>
@@ -241,10 +242,18 @@
  
 <div class="form-group">
 <div class="form-group row edge" dir="rtl">
-    <label for="exampleFormControlTextarea1">سبب الاستخراج</label>
+    <label for="exampleFormControlTextarea1" id="reasons">سبب الاستخراج</label>
 	</div>
-	<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+	<textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
   </div>
+  
+  <div class="form-group qeid">
+<div class="form-group row edge" dir="rtl">
+    <label for="exampleFormControlTextarea1">الجهة الموجهة إليها</label>
+	</div>
+	<textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+  </div>
+  
   <div class="row">
     <div class="form-group col-md-3">
 	<div class="form-group row edge" dir="rtl">
@@ -253,7 +262,7 @@
 	<input type="text" class="form-control" id="inputCity">
     
 	</div>
-    <div class="form-group col-md-3">
+    <div class="form-group col-md-3 student">
 	<div class="form-group row edge" dir="rtl">
       <label for="inputState">الفرقة</label>
 	  </div>
@@ -264,9 +273,16 @@
       </select>
     </div>
 	
+	<div class="form-group col-md-3 graduate"  style="display:none;" >
+	<div class="form-group row edge" dir="rtl">
+      <label for="inputZip" >سنة التخرج</label>
+	  </div>
+      <input type="text" class="form-control" id="inputZip">
+    </div>
+	
 	<div class="form-group col-md-3">
 	<div class="form-group row edge" dir="rtl">
-      <label for="inputZip" >القسم</label>
+      <label for="inputZip" >القسم و الشعبة</label>
 	  </div>
       <input type="text" class="form-control" id="inputZip">
     </div>
@@ -279,15 +295,7 @@
       <input type="text" class="form-control" id="inputZip">
     </div>
   </div>
-   <div class="form-group carneh" dir="rtl" >
-  <div class="form-group row edge" dir="rtl">
-      <label for="inputZip" >شهادة الميلاد</label>
-	  </div>
-  <div class="custom-file">
-  <input type="file" class="custom-file-input" id="customFile">
-  <label class="custom-file-label" for="customFile">Choose file</label>
-</div>
-  </div>
+  
   
  <div class="form-group row edge" dir="rtl">
   <button type="submit" class="btn btn-primary">تأكيد</button>
@@ -301,12 +309,27 @@ function showDiv() {
 $(function() { 
    
     $('#exampleFormControlSelect1').change(function(){
-        if($('#exampleFormControlSelect1').val() == '1') {
-
+        if($('#exampleFormControlSelect1').val() == '6') {
+			$('.graduate').show();
+			$('.student').hide();
             $('.carneh').show();
-        } else {
-            $('.carneh').hide(); 
-        } 
+			$('.qeid').hide();
+			$('#arabic').removeClass('col-md-6');
+			$('#arabic').addClass('col-md-12');
+        } else if($('#exampleFormControlSelect1').val() == '4'){
+           $('.graduate').hide();
+			$('.student').show();
+		   $('.carneh').hide(); 
+			$('.qeid').show();
+			$('#arabic').removeClass('col-md-12');
+			$('#arabic').addClass('col-md-6');
+			
+        }
+			else { $('.graduate').hide();
+			$('.student').show(); $('.carneh').hide(); $('.qeid').hide();
+$('#arabic').removeClass('col-md-6');
+			$('#arabic').addClass('col-md-12');	
+				}
     });
 });	
 
