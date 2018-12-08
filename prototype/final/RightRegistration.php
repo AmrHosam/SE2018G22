@@ -97,7 +97,7 @@ body{
         {
             color: black !important;
             display: block;
-            width: 130px;
+            width: 190px;
             font-family: 'Oswald', sans-serif;
             font-size: 20px !important;
             font-weight: 500 !important;
@@ -213,17 +213,26 @@ body{
           </div>
 		  </div>
 
-		     
+		    <div class="col-sm-12">
+		         <div class="row form-group">
+				     <div class="col-xs-4">
+		 	              <label class="pass">Confirm Password :</label></div>
+				  <div class="col-xs-8">
+			             <input type="password" name="password" id="password" placeholder="Enter your Password" class="form-control">
+				 </div>
+          </div>
+		  </div>
+
 		 	<div class="col-sm-12">
 		     <div class="row form-group">
 			     <div class="col-xs-4">	 
                          <p>  <label class="year" > Year:</label></div>
                              <select>
-                             <option>prepratory</option>
-                                 <option>first year</option>
-                                 <option>second year</option>
-                                 <option>third year</option>
-                                 <option>forth year</option>
+                             <option>Prepratory</option>
+                                 <option>First year</option>
+                                 <option>Second year</option>
+                                 <option>Third year</option>
+                                 <option>Forth year</option>
                              </select>
                          </p>
                        </div>
