@@ -169,6 +169,7 @@ body{
  <!---heading---->
      <h1 class="heading" style="text-align: center; font-weight: 700;"> Registration-Form</h1><hr></hr>
 	<!---Form starting----> 
+	 <form method="post">
 	<div style="margin-left: 5%;" class="row ">
 	 <!--- For Name---->
          <div class="col-sm-12">
@@ -216,7 +217,6 @@ body{
 		 	<div class="col-sm-12">
 		     <div class="row form-group">
 			     <div class="col-xs-4">	 
-                     <form>
                          <p>  <label class="year" > Year:</label></div>
                              <select>
                              <option>prepratory</option>
@@ -226,13 +226,11 @@ body{
                                  <option>forth year</option>
                              </select>
                          </p>
-                     </form>
                        </div>
 		     </div>
     		 	<div class="col-sm-12">
 		     <div class="row form-group">
 			     <div class="col-xs-4">
-                     <form>
                         <p>  <label style="margin-left: 2px;" class="Department" > Division:</label></div>
                    <select> \\Electrical divisions
                              <option>Computer</option>
