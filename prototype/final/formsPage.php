@@ -12,6 +12,7 @@
 <link href="css/bootstrap.css" rel="stylesheet" />
 <link href="css/bootstrap-rtl.css" rel="stylesheet" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
     <title>Hello, world!</title>
   </head>
   <style type="text/css">
@@ -19,15 +20,17 @@
   h1{font-size:120%;
   display:block;
   margin:auto;}
-:lang(ar) 	{font-family: "Scheherazade",serif; 
-                 font-size: 105%;}
-		  .jumbotron{background-color:white;}
-		  .container{background-color:#f0f2f3;
-		  border-radius:20px;}
-		  .edge{margin-right:2px;
-		  margin-bottom:0;}
-		  .btn{text-decoration:none !important;}
-		  .container{padding:20px;}
+  body    {
+  }
+:lang(ar)   {font-family: "Scheherazade",serif; 
+                 font-size: 105%;}  
+      .jumbotron{background-color:white;}
+      .container{background-color:#f0f2f3;
+      border-radius:20px;}
+      .edge{margin-right:2px;
+      margin-bottom:0;}
+      .btn{text-decoration:none !important;}
+      .container{padding:20px;}
   </style>
   <body>
   
@@ -50,14 +53,15 @@
    <div class="form-group row" dir="rtl">
     <label for="exampleFormControlSelect1" dir="ltr" style="margin-right:10px">choose your request | اختر طلبك</label>
    
-	<select lang="ar" class="form-control form-control-lg" id="exampleFormControlSelect1" rows="3">
-     <option value="1">شهادة تخرج</option>
-  <option value="2">كارنيه</option>
+  <select lang="ar" class="form-control form-control-lg" id="exampleFormControlSelect1" rows="3">
+     <option value="1">بيان درجات</option>
+  <option value="2">كارنيه بدل فاقد</option>
   <option value="3">كارنيه مترو</option>
- <option value="5">شهادة قيد</option>
-   <option value="4">اخر</option>
+ <option value="4">شهادة قيد</option>
+   <option value="5">تأجيل امتحانات</option>
+   <option value="6">شهادة تخرج</option>
     </select>
-	
+  
   </div>
 </select>
   </form>
@@ -82,79 +86,86 @@
  <div id="welcomeDiv"  style="display:none;" class="answer_list" >
 <form> 
  <div class="form-row" >
-    <div class="form-group col-md-6" >
-	<div class="form-group row edge" dir="rtl" >
+    <div class="form-group col-md-6" id="arabic" >
+  <div class="form-group row edge" dir="rtl" >
       <label for="inputEmail4" >الاسم باللغة العربية</label> 
-	  </div>
-	  
+    </div>
+    
       <input type="email" class="form-control" id="inputEmail4" >
  </div>
-    <div class="form-group col-md-6">
-	<div class="form-group row edge" dir="rtl">
+    <div class="form-group col-md-6 qeid">
+  <div class="form-group row edge" dir="rtl">
       <label for="inputEmail4">الاسم باللغة الانجليزية</label>
       </div>
-	  <input type="email" class="form-control" id="inputEmail4"  dir="ltr">
+    <input type="email" class="form-control" id="inputEmail4"  dir="ltr">
     </div>
   </div>
  
     
  <div class="form-group" dir="rtl">
     <div class="form-group row edge" dir="rtl">
-	<label for="inputAddress" >العنوان</label>
-	</div>
+  <label for="inputAddress" >العنوان</label>
+  </div>
     <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
   
  </div>
  
 <div class="form-group">
 <div class="form-group row edge" dir="rtl">
-    <label for="exampleFormControlTextarea1">سبب الاستخراج</label>
-	</div>
-	<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <label for="exampleFormControlTextarea1" id="reasons">سبب الاستخراج</label>
   </div>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+  </div>
+  
+  <div class="form-group qeid">
+<div class="form-group row edge" dir="rtl">
+    <label for="exampleFormControlTextarea1">الجهة الموجهة إليها</label>
+  </div>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+  </div>
+  
   <div class="row">
     <div class="form-group col-md-3">
-	<div class="form-group row edge" dir="rtl">
+  <div class="form-group row edge" dir="rtl">
       <label for="inputCity">رقم الهاتف</label>
 </div>    
-	<input type="text" class="form-control" id="inputCity">
+  <input type="text" class="form-control" id="inputCity">
     
-	</div>
-    <div class="form-group col-md-3">
-	<div class="form-group row edge" dir="rtl">
+  </div>
+    <div class="form-group col-md-3 student">
+  <div class="form-group row edge" dir="rtl">
       <label for="inputState">الفرقة</label>
-	  </div>
+    </div>
       <select id="inputState" class="form-control" style="font-size:90%">
         <option selected>الاعدادية</option>
         <option>الاولى</option>
-		<option>الثانية</option><option>الثالثة</option><option>الرابعة</option>
+    <option>الثانية</option><option>الثالثة</option><option>الرابعة</option>
       </select>
     </div>
-	
-	<div class="form-group col-md-3">
-	<div class="form-group row edge" dir="rtl">
-      <label for="inputZip" >القسم</label>
-	  </div>
-      <input type="text" class="form-control" id="inputZip">
-    </div>
-	
-	
-    <div class="form-group col-md-3">
-	<div class="form-group row edge" dir="rtl">
-      <label for="inputZip" >تاريخ الميلاد</label>
-	  </div>
-      <input type="text" class="form-control" id="inputZip">
-    </div>
-  </div>
-   <div class="form-group carneh" dir="rtl" >
+  
+  <div class="form-group col-md-3 graduate"  style="display:none;" >
   <div class="form-group row edge" dir="rtl">
-      <label for="inputZip" >شهادة الميلاد</label>
-	  </div>
-  <div class="custom-file">
-  <input type="file" class="custom-file-input" id="customFile">
-  <label class="custom-file-label" for="customFile">Choose file</label>
-</div>
+      <label for="inputZip" >سنة التخرج</label>
+    </div>
+      <input type="text" class="form-control" id="inputZip">
+    </div>
+  
+  <div class="form-group col-md-3">
+  <div class="form-group row edge" dir="rtl">
+      <label for="inputZip" >القسم و الشعبة</label>
+    </div>
+      <input type="text" class="form-control" id="inputZip">
+    </div>
+  
+  
+    <div class="form-group col-md-3">
+  <div class="form-group row edge" dir="rtl">
+      <label for="inputZip" >تاريخ الميلاد</label>
+    </div>
+      <input type="text" class="form-control" id="inputZip">
+    </div>
   </div>
+  
   
  <div class="form-group row edge" dir="rtl">
   <button type="submit" class="btn btn-primary">تأكيد</button>
@@ -168,14 +179,29 @@ function showDiv() {
 $(function() { 
    
     $('#exampleFormControlSelect1').change(function(){
-        if($('#exampleFormControlSelect1').val() == '1') {
-
+        if($('#exampleFormControlSelect1').val() == '6') {
+      $('.graduate').show();
+      $('.student').hide();
             $('.carneh').show();
-        } else {
-            $('.carneh').hide(); 
-        } 
+      $('.qeid').hide();
+      $('#arabic').removeClass('col-md-6');
+      $('#arabic').addClass('col-md-12');
+        } else if($('#exampleFormControlSelect1').val() == '4'){
+           $('.graduate').hide();
+      $('.student').show();
+       $('.carneh').hide(); 
+      $('.qeid').show();
+      $('#arabic').removeClass('col-md-12');
+      $('#arabic').addClass('col-md-6');
+      
+        }
+      else { $('.graduate').hide();
+      $('.student').show(); $('.carneh').hide(); $('.qeid').hide();
+$('#arabic').removeClass('col-md-6');
+      $('#arabic').addClass('col-md-12'); 
+        }
     });
-});	
+}); 
 
 </script>
 </div>
