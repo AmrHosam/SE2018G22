@@ -9,6 +9,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>  
 <link rel="stylesheet" type="text/css" href="style.css">   
 
     <title>welcome to student affairs</title>
@@ -101,21 +104,6 @@
           #sign{
             margin-bottom: 30px;  
           }
-          .container{
-  font-family:Roboto,sans-serif;
-    background:gray !important;    
-    border-radius: 25px;
-    padding-left: 20px;
-     border-style: 1px solid gray;
-     margin: 0 auto;
-     text-align: center;
-     opacity: 0.8;
-     margin-top: 67px;
-   box-shadow: 2px 5px 5px 0px #eee;
-     max-width: 500px;
-     padding-top: 10px;
-     height: 400px;
-     margin-top: 166px;
 }
 /*--- for label of year---*/
         .year{
@@ -124,30 +112,29 @@
      font-size: 14px;
      color: white;
      margin-top: 10px;
-
         }
                 /*--- for label of department---*/
-
         .Department{
      margin-left: -10px;
      font-family: sans-serif;
      font-size: 14px;
      color: white;
      margin-top: 10px;
-
         }
                 /*--- for label of Student ID---*/
 .container{
-  font-family:Roboto,sans-serif;
-    background:gray !important;    
-    border-radius: 25px;
-    padding-left: 20px;
+     display: block;
+     margin: auto !important;
+     font-family:Roboto,sans-serif;
+     background:gray !important;    
+     border-radius: 25px;
+     padding-left: 20px;
      border-style: 1px solid gray;
      margin: 0 auto;
      text-align: center;
      opacity: 0.8;
      margin-top: 67px;
-   box-shadow: 2px 5px 5px 0px #eee;
+     box-shadow: 2px 5px 5px 0px black;
      max-width: 500px;
      padding-top: 10px;
      height: 400px;
@@ -162,33 +149,37 @@
 }
         /*--- for label of Full name---*/
 .FullName{
-   margin-left: 1px;
+     position: relative;
+     float: right;
+     margin-left: 2px;
      font-family: sans-serif;
      font-size: 14px;
      color: white;
      margin-top: 5px;
+     width: 140px;
+     font-weight: 700 !important;
 }
 #lname{
    margin-top:5px;
 }
     
-
 /*---for heading-----*/
 .heading{
    text-decoration:bold;
-   text-align : left;
+   display: block !important ;
+   text-align : center !important;
    font-size:30px;
    color:#F96;
    padding-top:10px;
+   color: #800000 ;
 }
         label
         {
             display: block;
             width: 100px;
-                        font-family: Impact, fantasy !important;
+            font-family: Impact;
             font-size: 20px !important;
             font-weight: 500 !important;
-
         }
 /*-------for email----------*/
   /*------label----*/
@@ -220,10 +211,15 @@
      margin-top: 10px;
      color: #ff9;
   
-} 
-
+}
+          .userIcon{
+              height: 35px;
+              width: 35px;
+              margin-left: 1% ;
+          margin-top: -3% !important ;              
+          }          
+          
      /*--------------label---------*/
-
 /*------------For submit button---------*/
 .sbutton{
    color: white;
@@ -243,7 +239,7 @@
              
      background-repeat: no-repeat;
     background-size:100% 100%;
-    height: 750px;    
+      
     background-position: center;
     background-attachment: fixed;
                
@@ -264,16 +260,23 @@
      
      
   </head>
-  <body>      
+  <body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+      
+      
       <div class="bimg">
 <br>
 <br>
 <br>
 <br>
- <div style="background-color: gray; border-radius: 25px; padding-left: 20px; padding-bottom: 20px; margin-top: 100px;margin-left: 5%;margin-right: 5%" class="container">
+ <div style="background-color: gray; border-radius: 25px; padding-left: 20px; padding-bottom: 20px;" class="container">
     
  <!---heading---->
-     <h1 class="heading" style="text-align: center; font-weight: 1000"> USER PROFILE</h1><hr></hr>
+     <h1 class="heading" style="text-align: center; font-weight: 1000 " > USER PROFILE<img src="Icon2.png" class="userIcon"></h1><hr></hr>
   <!---Form starting----> 
   <div class="row ">
    <!--- For Name---->
@@ -282,7 +285,7 @@
            <div class="col-xs-4">
                      <label class="FullName"> Name :</label> </div>
              <div class="col-xs-8">
-              <label class="FullName"> Salma Diaa:</label> </div>
+              <label class="FullName"> Salma Diaa</label> </div>
                  
              </div>
           </div>
@@ -327,15 +330,15 @@
          <div class="col-sm-12">
              <div class="row form-group">
            <div class="col-xs-4">
-                     <label class="FullName"> Phone Number :</label> </div>
+                     <label class="FullName">Phone:</label> </div>
              <div class="col-xs-8">
-              <label class="FullName"> 1111111111111</label> </div>
+              <label class="FullName">    1111111111111</label> </div>
                  
              </div>
           </div>
      </div>
                  </form>
 
-</div>
-</body>
-</html>
+<div>
+<body>
+<html>
