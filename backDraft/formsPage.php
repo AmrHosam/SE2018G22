@@ -1,6 +1,5 @@
 <?php
 	include_once('navSign.php');
-	include_once('connect.php');
 ?>
 <!doctype html>
 <html dir="auto" lang="en">
