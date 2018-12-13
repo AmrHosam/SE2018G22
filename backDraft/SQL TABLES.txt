@@ -1,6 +1,6 @@
 CREATE DATABASE affairs;
 
-CREATE TABLE requests(
+CREATE TABLE data(
 id INT NOT NULL AUTO_INCREMENT,
 student_id INT NOT NULL,
 type CHAR(1) NOT NULL,

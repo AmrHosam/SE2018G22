@@ -1,6 +1,6 @@
 <?php
 	include_once('../connect.php');
-	$query = "INSERT INTO `requests` (`student_id`,`type`,`name_ar`,`name_en`,`address`,`reason`,`mobile_number`,
+	$query = "INSERT INTO `data` (`student_id`,`type`,`name_ar`,`name_en`,`address`,`reason`,`mobile_number`,
 	`year`,`department`,`birth_date`,`file`)VALUES ('".mysqli_real_escape_string($link, $_POST['student_id'])."',
 	'".mysqli_real_escape_string($link, $_POST['type'])."','".mysqli_real_escape_string($link, $_POST['name_ar'])."',
 	'".mysqli_real_escape_string($link, $_POST['name_en'])."','".mysqli_real_escape_string($link, $_POST['address'])."',
