@@ -1,10 +1,10 @@
 <!-- <pre> -->
 <?php
 session_start();
-$_SESSION['new_user'] = true;
+$_SESSION['new_user'] = true; //session variable to mark old and new users
 include_once 'navSign.php';
 include_once './connect.php';
-$student_id = 2;
+$student_id = 2; //this variable will be set by sign-in page
 $query = "SELECT * FROM `users` WHERE student_id = 2";
 $stmt = $link->prepare($query);
 $stmt->execute();

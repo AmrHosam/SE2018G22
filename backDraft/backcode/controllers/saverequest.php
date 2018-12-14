@@ -13,7 +13,8 @@ $department = $_POST['department'];
 $birth_date = null;
 $student_id = 2;
 /* send to database and error checking*/
-if ($_SESSION['new_user'] == true) {
+if ($_SESSION['new_user'] == true) { //checks if the user already has an account to avoid entering duplicate users
+    //prepare statements are used to avoid sql injection
     $stmt1 = $link->prepare("INSERT INTO `users` (student_id, name_ar,name_en,`address`,reason,mobile_number,
         `year`,department,birth_date) VALUES (?,?,?,?,?,?,?,?,?)");
 } else {
