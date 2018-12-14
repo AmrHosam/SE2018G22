@@ -1,9 +1,7 @@
 CREATE DATABASE affairs;
 
-CREATE TABLE data(
-id INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE users(
 student_id INT NOT NULL,
-type CHAR(1) NOT NULL,
 name_ar VARCHAR(80) NOT NULL,
 name_en VARCHAR(80) NOT NULL,
 address VARCHAR(100) NOT NULL,
@@ -12,7 +10,16 @@ mobile_number Char(11) NOT NULL,
 year INT NOT NULL,
 department VARCHAR(100) NOT NULL,
 birth_date DATE,
-file MEDIUMBLOB,
+birth_cert MEDIUMBLOB,
 INDEX(student_id),
-PRIMARY KEY(id)
+PRIMARY KEY(student_id)
+);
+
+create table requests(
+id INT NOT NULL AUTO_INCREMENT,
+type CHAR(1) NOT NULL,
+primary key(id),
+student_id INT NOT NULL,
+INDEX(student_id),
+CONSTRAINT FOREIGN KEY (student_id) REFERENCES users (student_id) ON DELETE CASCADE ON UPDATE CASCADE
 );

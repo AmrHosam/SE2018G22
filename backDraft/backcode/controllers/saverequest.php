@@ -1,16 +1,7 @@
 <?php
+session_start();
 include_once '../connect.php';
-$stmt = $link->prepare("INSERT INTO `data` (student_id, `type`, name_ar,name_en,`address`,reason,mobile_number,
- `year`,department,birth_date) VALUES (?,?,?,?,?,?,?,?,?,?)");
-if (false === $stmt) {
-    die('prepare() failed: ' . htmlspecialchars($mysqli->error));
-}
-$rc = $stmt->bind_param('issssssiss', $student_id, $type, $name_ar, $name_en, $address, $reason, $mobile, $year,
-    $department, $birth_date);
-if (false === $rc) {
-    // again execute() is useless if you can't bind the parameters. Bail out somehow.
-    die('bind_param() failed: ' . htmlspecialchars($stmt->error));
-}
+/* retreive POST data */
 $type = $_POST['type'];
 $name_ar = $_POST['name_ar'];
 $name_en = $_POST['name_en'];
@@ -20,10 +11,39 @@ $mobile = $_POST['mobile'];
 $year = $_POST['year'];
 $department = $_POST['department'];
 $birth_date = null;
-$student_id = 1;
-$rc = $stmt->execute();
-if (false === $rc) {
-    die('execute() failed: ' . htmlspecialchars($stmt->error));
+$student_id = 2;
+/* send to database and error checking*/
+if ($_SESSION['new_user'] == true) {
+    $stmt1 = $link->prepare("INSERT INTO `users` (student_id, name_ar,name_en,`address`,reason,mobile_number,
+        `year`,department,birth_date) VALUES (?,?,?,?,?,?,?,?,?)");
+} else {
+    $stmt1 = $link->prepare("UPDATE `users` SET student_id=?, name_ar=?,name_en=?,`address`=?
+    ,reason=?,mobile_number=?,`year`=?,department=?,birth_date=?");
 }
-$stmt->close();
+if (false === $stmt1) {
+    die('prepare() failed: ' . htmlspecialchars($link->error));
+}
+$stmt2 = $link->prepare("INSERT INTO `requests` (student_id, `type`) VALUES (?,?)");
+if (false === $stmt2) {
+    die('prepare() failed: ' . htmlspecialchars($link->error));
+}
+$rc1 = $stmt1->bind_param('isssssiss', $student_id, $name_ar, $name_en, $address, $reason, $mobile, $year,
+    $department, $birth_date);
+$rc2 = $stmt2->bind_param('is', $student_id, $type);
+if (false === $rc1) {
+    die('bind_param() failed: ' . htmlspecialchars($stmt1->error));
+}
+if (false === $rc2) {
+    die('bind_param() failed: ' . htmlspecialchars($stmt2->error));
+}
+$rc1 = $stmt1->execute();
+if (false === $rc1) {
+    die('execute() failed: ' . htmlspecialchars($stmt1->error));
+}
+$stmt1->close();
+$rc2 = $stmt2->execute();
+if (false === $rc2) {
+    die('execute() failed: ' . htmlspecialchars($stmt2->error));
+}
+$stmt2->close();
 header('Location: ../formsPage.php');
