@@ -138,7 +138,7 @@ if ($row = $result->fetch_assoc()) {
                             <div class="form-group row edge" dir="rtl">
                                 <label for="exampleFormControlTextarea1">سبب الاستخراج</label>
                             </div>
-                            <textarea name="reason" class="form-control" id="exampleFormControlTextarea1" rows="3" value = "<?php print_r($row["reason"]);?>"></textarea>
+                            <textarea name="reason" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-3">
@@ -173,7 +173,7 @@ if ($row = $result->fetch_assoc()) {
                                 <div class="form-group row edge" dir="rtl">
                                     <label for="inputZip">تاريخ الميلاد</label>
                                 </div>
-                                <input name="birth_date" type="text" class="form-control" id="inputZip" value = "<?php print_r($row["date"]);?>">
+                                <input name="birth_date" type="text" class="form-control" id="inputZip" value = "<?php print_r($row["birth_date"]);?>">
                             </div>
                         </div>
                         <div class="form-group carneh" dir="rtl">
