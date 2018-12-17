@@ -1,11 +1,10 @@
-<!-- <pre> -->
 <?php
 session_start();
 $_SESSION['new_user'] = true; //session variable to mark old and new users
 include_once 'navSign.php';
 include_once './connect.php';
-$student_id = 2; //this variable will be set by sign-in page
-$query = "SELECT * FROM `users` WHERE student_id = 2";
+$student_id = 1; //this variable will be set by sign-in page
+$query = "SELECT * FROM `users` WHERE student_id = '1'";
 $stmt = $link->prepare($query);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -13,8 +12,6 @@ if ($row = $result->fetch_assoc()) {
     $_SESSION['new_user'] = false;
 }
 ?>
-<!-- </pre> -->
-
 <!doctype html>
 <html dir="auto" lang="en">
 
@@ -28,6 +25,7 @@ if ($row = $result->fetch_assoc()) {
         <link href="css/bootstrap.css" rel="stylesheet" />
         <link href="css/bootstrap-rtl.css" rel="stylesheet" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
         <title>Hello, world!</title>
     </head>
     <style type="text/css">
@@ -40,6 +38,8 @@ if ($row = $result->fetch_assoc()) {
             display: block;
             margin: auto;
         }
+
+        body {}
 
         :lang(ar) {
             font-family: "Scheherazade", serif;
@@ -86,42 +86,42 @@ if ($row = $result->fetch_assoc()) {
                 <hr class="my-4">
 
 
-                <form action="controllers/saverequest.php" method="post">        <!-- -->
+                <form action="controllers/saverequest.php" method="post">
                     <div class="form-group row" dir="rtl">
                         <label for="exampleFormControlSelect1" dir="ltr" style="margin-right:10px">choose your request
                             | اختر طلبك</label>
 
                         <select name="type" lang="ar" class="form-control form-control-lg" id="exampleFormControlSelect1"
                             rows="3">
-                            <option value="A">شهادة تخرج</option>
-                            <option value="B">كارنيه</option>
-                            <option value="C">كارنيه مترو</option>
-                            <option value="D">شهادة قيد</option>
-                            <option value="E">اخر</option>
+                            <option value="1">بيان درجات</option>
+                            <option value="2">كارنيه بدل فاقد</option>
+                            <option value="3">كارنيه مترو</option>
+                            <option value="4">شهادة قيد</option>
+                            <option value="5">تأجيل امتحانات</option>
+                            <option value="6">شهادة تخرج</option>
                         </select>
 
                     </div>
+                    </select>
                     <div class="form-group row edge" dir="rtl">
                         <p class="lead">
-                            <a class="btn btn-primary btn-lg" href="#welcomeDiv" role="button" onclick="showDiv()">تنفيذ</a>
+                            <a class="btn btn-primary btn-lg" href="#" role="button" onclick="showDiv()">تنفيذ</a>
                         </p>
                     </div>
-                    </select>
+
                     <div id="welcomeDiv" style="display:none;" class="answer_list">
-                        <input type="hidden" name="student_id" value="1">
                         <div class="form-row">
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-6" id="arabic">
                                 <div class="form-group row edge" dir="rtl">
                                     <label for="inputEmail4">الاسم باللغة العربية</label>
                                 </div>
-
-                                <input name="name_ar" type="text" class="form-control" id="inputEmail4" value = "<?php print_r($row["name_ar"]);?>">
+                                <input name="name_ar" type="text" class="form-control" id="inputEmail4" value="<?php print_r($row['name_ar']);?>">
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-6 qeid">
                                 <div class="form-group row edge" dir="rtl">
                                     <label for="inputEmail4">الاسم باللغة الانجليزية</label>
                                 </div>
-                                <input name="name_en" type="text" class="form-control" id="inputEmail4" dir="ltr"  value = "<?php print_r($row["name_en"]);?>">
+                                <input name="name_en" type="text" class="form-control" id="inputEmail4" dir="ltr" value="<?php print_r($row['name_en']);?>">
                             </div>
                         </div>
 
@@ -130,30 +130,39 @@ if ($row = $result->fetch_assoc()) {
                             <div class="form-group row edge" dir="rtl">
                                 <label for="inputAddress">العنوان</label>
                             </div>
-                            <input name="address" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" value = "<?php print_r($row["address"]);?>">
+                            <input name="address" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St"
+                                value="<?php print_r($row['address']);?>">
 
                         </div>
 
                         <div class="form-group">
                             <div class="form-group row edge" dir="rtl">
-                                <label for="exampleFormControlTextarea1">سبب الاستخراج</label>
+                                <label for="exampleFormControlTextarea1" id="reasons">سبب الاستخراج</label>
                             </div>
-                            <textarea name="reason" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea name="reason" class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
                         </div>
+
+                        <div class="form-group qeid">
+                            <div class="form-group row edge" dir="rtl">
+                                <label for="exampleFormControlTextarea1">الجهة الموجهة إليها</label>
+                            </div>
+                            <textarea name="qeid" class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+                        </div>
+
                         <div class="row">
                             <div class="form-group col-md-3">
                                 <div class="form-group row edge" dir="rtl">
                                     <label for="inputCity">رقم الهاتف</label>
                                 </div>
-                                <input name="mobile" type="text" class="form-control" id="inputCity" value = "<?php print_r($row["mobile_number"]);?>">
+                                <input name="mobile" type="text" class="form-control" id="inputCity" value="<?php print_r($row["mobile_number"]);?>">
 
                             </div>
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-3 student">
                                 <div class="form-group row edge" dir="rtl">
                                     <label for="inputState">الفرقة</label>
                                 </div>
-                                <select name="year" id="inputState" class="form-control" style="font-size:90%" value = "<?php print_r($row["year"]);?>">
-                                    <option value="1" selected>الاعدادية</option>
+                                <select name="year" id="inputState" class="form-control" style="font-size:90%" value="<?php print_r($row["year"]);?>">
+                                    <option value="1">الاعدادية</option>
                                     <option value="2">الاولى</option>
                                     <option value="3">الثانية</option>
                                     <option value="4">الثالثة</option>
@@ -161,11 +170,18 @@ if ($row = $result->fetch_assoc()) {
                                 </select>
                             </div>
 
+                            <div class="form-group col-md-3 graduate" style="display:none;">
+                                <div class="form-group row edge" dir="rtl">
+                                    <label for="inputZip">سنة التخرج</label>
+                                </div>
+                                <input name="gradyear" type="text" class="form-control" id="inputZip" value="<?php print_r($row["grad_year"]);?>">
+                            </div>
+
                             <div class="form-group col-md-3">
                                 <div class="form-group row edge" dir="rtl">
-                                    <label for="inputZip">القسم</label>
+                                    <label for="inputZip">القسم و الشعبة</label>
                                 </div>
-                                <input name="department" type="text" class="form-control" id="inputZip" value = "<?php print_r($row["department"]);?>">
+                                <input name="department" type="text" class="form-control" id="inputZip" value="<?php print_r($row["department"]);?>">
                             </div>
 
 
@@ -173,23 +189,15 @@ if ($row = $result->fetch_assoc()) {
                                 <div class="form-group row edge" dir="rtl">
                                     <label for="inputZip">تاريخ الميلاد</label>
                                 </div>
-                                <input name="birth_date" type="text" class="form-control" id="inputZip" value = "<?php print_r($row["birth_date"]);?>">
+                                <input name="birth_date" type="date" class="form-control" id="inputZip" value="<?php print_r($row["birth_date"]);?>">
                             </div>
                         </div>
-                        <div class="form-group carneh" dir="rtl">
-                            <div class="form-group row edge" dir="rtl">
-                                <label for="inputZip">شهادة الميلاد</label>
-                            </div>
-                            <div class="custom-file">
-                                <input name="file" type="file" class="custom-file-input" id="customFile">
-                                <label class="custom-file-label" for="customFile">Choose file</label>
-                            </div>
-                        </div>
+
 
                         <div class="form-group row edge" dir="rtl">
                             <button type="submit" class="btn btn-primary">تأكيد</button>
                         </div>
-
+                    </div>
                 </form>
                 <script type="text/javascript">
                     function showDiv() {
@@ -198,28 +206,32 @@ if ($row = $result->fetch_assoc()) {
                     $(function () {
 
                         $('#exampleFormControlSelect1').change(function () {
-                            if ($('#exampleFormControlSelect1').val() == 'A') {
+                            if ($('#exampleFormControlSelect1').val() == '6') {
+                                $('.graduate').show();
+                                $('.student').hide();
                                 $('.carneh').show();
-                                $('#customFile').attr('required', 'true');
-                            } else {
+                                $('.qeid').hide();
+                                $('#arabic').removeClass('col-md-6');
+                                $('#arabic').addClass('col-md-12');
+                            } else if ($('#exampleFormControlSelect1').val() == '4') {
+                                $('.graduate').hide();
+                                $('.student').show();
                                 $('.carneh').hide();
-                                $('#customFile').removeAttr('required');
+                                $('.qeid').show();
+                                $('#arabic').removeClass('col-md-12');
+                                $('#arabic').addClass('col-md-6');
+
+                            }
+                            else {
+                                $('.graduate').hide();
+                                $('.student').show(); $('.carneh').hide(); $('.qeid').hide();
+                                $('#arabic').removeClass('col-md-6');
+                                $('#arabic').addClass('col-md-12');
                             }
                         });
                     });
-/*$(function(){
-    var elements = document.getElementsByTagName("input");
-    for (var i = 0; i < elements.length; i++) {
-        elements[i].oninvalid = function(e) {
-            e.target.setCustomValidity("This can't be left keda!");
-        };
-    }
-});*/
-
                 </script>
             </div>
-
-        </div>
         </div>
     </body>
 
