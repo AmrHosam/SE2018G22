@@ -5,24 +5,24 @@ students can apply for any type of official document, and employees can manage a
 any type of requests. Online student affairs offer answers for all student’s enquiries and FAQs,
 easy & quick access to any document procedures, student can manage all his\her requests
 supported with online payment as well as mail notifications.
-# Team Members:
-Salma Alaa
-	
-Salma Diaa
-
-Amr Hossam
-
-Omar Shafik
-
-Omar Fathy
-
-Omar Magdy
-
-Omar Mohamed Ibrahim
-
-Omar Nagah
 
 # Documentaions:
 
-<a href="BRD/Students-Affairs-brd-final.pdf">BRD</a>
-<a href="SRS/SRS-final.pdf">SRS</a>
+* <a href="White paper/White-paper-Student-affairs-system.pdf">White paper</a>
+
+* <a href="BRD/Students-Affairs-brd-final.pdf">BRD</a>
+
+* <a href="SRS/SRS-final.pdf">SRS</a>
+
+### Team Members:
+
+Code          | Name	     | Section
+------------- | -------------| -------------
+1500668  | Salma Alaa | 2
+1500665  | Salma Diaa | 2
+1500948  | Amr Hossam | 2
+1500927  | Omar Shafik | 2
+1500913  | Omar Fathy | 2
+1500914  | Omar Magdy | 2
+1500915  | Omar Mohamed Ibrahim | 2
+1500932  | Omar Nagah | 2
