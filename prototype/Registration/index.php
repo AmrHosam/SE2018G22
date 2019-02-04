@@ -1,4 +1,7 @@
-<?php 	include_once('navIndex.php');?>
+<?php 	include_once('navIndex.php');
+if(isset($_SESSION['email']))
+{header("location:homesign.php");}
+?>
 <!doctype html>
 <html lang="en">
   <head>
