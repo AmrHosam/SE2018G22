@@ -1,9 +1,20 @@
 CREATE DATABASE affairs;
 
 CREATE TABLE users(
+id INT NOT NULL AUTO_INCREMENT,
+`student id` VARCHAR(50) NOT NULL,
+email TEXT NOT NULL,
+password TEXT NOT NULL,
+`full name` VARCHAR(100) NOT NULL,
+year VARCHAR(100) NOT NULL,
+division VARCHAR(100) NOT NULL,
+PRIMARY KEY(id)
+);
+
+CREATE TABLE students(
 student_id INT NOT NULL,
 name_ar VARCHAR(80) NOT NULL,
-name_en VARCHAR(80) NOT NULL,
+name_en VARCHAR(80),
 address VARCHAR(100) NOT NULL,
 mobile_number Char(11) NOT NULL,
 year INT NOT NULL,
@@ -16,10 +27,11 @@ PRIMARY KEY(student_id)
 
 create table requests(
 id INT NOT NULL AUTO_INCREMENT,
-type INT(1) NOT NULL,
-reason VARCHAR(256) NOT NULL,
+type CHAR(1) NOT NULL,
+reason TEXT NOT NULL,
+destination VARCHAR(256) NOT NULL,
 primary key(id),
 student_id INT NOT NULL,
 INDEX(student_id),
-CONSTRAINT FOREIGN KEY (student_id) REFERENCES users (student_id) ON DELETE CASCADE ON UPDATE CASCADE
+CONSTRAINT FOREIGN KEY (student_id) REFERENCES students (student_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
