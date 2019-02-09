@@ -28,7 +28,7 @@ if ($row = $result->fetch_assoc()) {
 <!-- <link href="css/bootstrap-rtl.css" rel="stylesheet" />-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!--<script src="js/bootstrap.min.js"></script>-->
-    <title>Hello, world!</title>
+    <title>Requests</title>
   </head>
   <style type="text/css">
   #requests{font-size:180%;}
