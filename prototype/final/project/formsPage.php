@@ -48,13 +48,13 @@ if ($row = $result->fetch_assoc()) {
       .container{padding:20px;}
   </style>
   <body>
-  
+
 
 <div class="bimg">
 </div>
 
 <div dir="rtl" lang="ar" class="jumbotron">
-  
+
 
 <div dir="rtl" class="container"> 
  <div class="form-group row" dir="rtl"  id="requests" >
@@ -62,12 +62,12 @@ if ($row = $result->fetch_assoc()) {
 </div>
 
   <hr class="my-4">
- 
-  
+
+
   <form action="controllers/saverequest.php" method="post">
    <div class="form-group row" dir="rtl">
     <label for="exampleFormControlSelect1" dir="ltr" style="margin-right:10px">choose your request | اختر طلبك</label>
-   
+
   <select name="type" lang="ar" class="form-control form-control-lg" id="exampleFormControlSelect1" rows="3">
      <option value="A">بيان درجات</option>
   <option value="B">كارنيه بدل فاقد</option>
@@ -84,93 +84,94 @@ if ($row = $result->fetch_assoc()) {
   </p>
   </div>
  <div id="welcomeDiv"  style="display:none;" class="answer_list" >
-<form> 
  <div class="form-row" >
     <div class="form-group col-md-6" id="arabic" >
-	<div class="form-group row edge" dir="rtl" >
-      <label for="inputZip" >الاسم باللغة العربية</label> 
-	  </div>
-	  
-      <input type="text" class="form-control" id="inputZip" required>
+  <div class="form-group row edge" dir="rtl" >
+      <label for="inputEmail4" >الاسم باللغة العربية</label> 
+    </div>
+
+      <input name="name_ar" type="text" class="form-control" id="inputEmail4" required>
  </div>
     <div class="form-group col-md-6 qeid">
-	<div class="form-group row edge" dir="rtl">
-      <label for="inputZip">الاسم باللغة الانجليزية</label>
+  <div class="form-group row edge" dir="rtl">
+      <label for="inputEmail4">الاسم باللغة الانجليزية</label>
       </div>
-	  <input type="text" class="form-control" id="inputZip"  dir="ltr" required>
+    <input name="name_en" type="text" class="form-control" id="inputEmail4"  dir="ltr" required>
     </div>
   </div>
- 
-    
+
+
  <div class="form-group" dir="rtl">
     <div class="form-group row edge" dir="rtl">
-	<label for="inputAddress" >العنوان</label>
-	</div>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required>
-  
+  <label for="inputAddress" >العنوان</label>
+  </div>
+    <input name="address" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required>
+
  </div>
- 
+
 <div class="form-group">
 <div class="form-group row edge" dir="rtl">
     <label for="exampleFormControlTextarea1" id="reasons">سبب الاستخراج</label>
-	</div>
-	<textarea class="form-control" id="exampleFormControlTextarea1" rows="2" required></textarea>
   </div>
-  
+  <textarea name="reason" class="form-control" id="exampleFormControlTextarea1" rows="2" required></textarea>
+  </div>
+
   <div class="form-group qeid">
 <div class="form-group row edge" dir="rtl">
     <label for="exampleFormControlTextarea1">الجهة الموجهة إليها</label>
-	</div>
-	<textarea class="form-control" id="exampleFormControlTextarea1" rows="2" required></textarea>
   </div>
-  
+  <textarea name="qeid" class="form-control" id="exampleFormControlTextarea1" rows="2" required></textarea>
+  </div>
+
   <div class="row">
     <div class="form-group col-md-3">
-	<div class="form-group row edge" dir="rtl">
+  <div class="form-group row edge" dir="rtl">
       <label for="inputCity">رقم الهاتف</label>
 </div>    
-	<input type="text" class="form-control" id="inputCity" required>
-    
-	</div>
+  <input name="mobile" type="text" class="form-control" id="inputCity" required>
+
+  </div>
     <div class="form-group col-md-3 student">
-	<div class="form-group row edge" dir="rtl">
+  <div class="form-group row edge" dir="rtl">
       <label for="inputState">الفرقة</label>
-	  </div>
-      <select id="inputState" class="form-control" style="font-size:90%" required>
-        <option selected>الاعدادية</option>
-        <option>الاولى</option>
-		<option>الثانية</option><option>الثالثة</option><option>الرابعة</option>
+    </div>
+      <select name="year" id="inputState" class="form-control" style="font-size:90%" required>
+        <option value="1">الاعدادية</option>
+		<option value="2">الاولى</option>
+		<option value="3">الثانية</option>
+		<option value="4">الثالثة</option>
+		<option value="5">الرابعة</option>
       </select>
     </div>
-	
-	<div class="form-group col-md-3 graduate"  style="display:none;" >
-	<div class="form-group row edge" dir="rtl">
+
+  <div class="form-group col-md-3 graduate"  style="display:none;" >
+  <div class="form-group row edge" dir="rtl">
       <label for="inputZip" >سنة التخرج</label>
-	  </div>
-      <input type="text" class="form-control" id="inputZip" required>
     </div>
-	
-	<div class="form-group col-md-3">
-	<div class="form-group row edge" dir="rtl">
+      <input name="gradyear" type="text" class="form-control" id="inputZip" required>
+    </div>
+
+  <div class="form-group col-md-3">
+  <div class="form-group row edge" dir="rtl">
       <label for="inputZip" >القسم و الشعبة</label>
-	  </div>
-      <input type="text" class="form-control" id="inputZip" required>
     </div>
-	
-	
+      <input name="department" type="text" class="form-control" id="inputZip" required>
+    </div>
+
+
     <div class="form-group col-md-3">
-	<div class="form-group row edge" dir="rtl">
+  <div class="form-group row edge" dir="rtl">
       <label for="inputZip" >تاريخ الميلاد</label>
-	  </div>
-    <input type="date" name="bday">
+    </div>
+       <input type="date" name="birth_date" required>
     </div>
   </div>
-  
-  
+
+
  <div class="form-group row edge" dir="rtl">
   <button type="submit" class="btn btn-primary">تأكيد</button>
   </div>
-  
+
 </form>
 <script type="text/javascript">
 function showDiv() {
@@ -204,7 +205,7 @@ $('#arabic').removeClass('col-md-6');
 }); 
 </script>
 </div>
- 
+
 </div>
 </div>  
   </body>
