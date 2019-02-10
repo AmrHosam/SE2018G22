@@ -42,6 +42,7 @@ else{
 			
 			$_SESSION['id'] = $row['id'];
 			$_SESSION['email'] = $_POST['email'];
+			$_SESSION['name'] = $row['full name'];
 			header("Location: ../profile.php");}
 		else {
 			$error = "That email/password combination could not be found.";
