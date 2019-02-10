@@ -34,6 +34,7 @@ $query = "INSERT INTO `users` (`student id`,`full name`,`email`,`password`,`year
 if (mysqli_query($link, $query)) {
 	$_SESSION['email'] = $_POST['email'];
 	$_SESSION['id'] = mysqli_insert_id($link);
+	$_SESSION['name'] =  $_POST['fname'];
 	echo $_SESSION['id'];
 	                        $query = "UPDATE `users` SET password = '".md5(md5(mysqli_insert_id($link)).$_POST['password'])."' WHERE id = ".$_SESSION['id']." LIMIT 1";
 

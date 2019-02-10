@@ -154,7 +154,7 @@ else{header("location: index.php");}
      box-shadow: 2px 5px 5px 0px black;
      max-width: 500px;
      padding-top: 10px;
-     height: 400px;
+     height: auto;
      margin-top: 166px;
 }
 .StudentID{
@@ -273,6 +273,19 @@ else{header("location: index.php");}
           .nav-link:hover{
               color: black !important;
           }
+          .info
+          {
+            width: 100% !important;
+            position: relative;
+           float: right;
+           margin-left: 10px;
+           padding-left: 5px;
+           font-family: sans-serif;
+           font-size: 14px;
+           color: white;
+           margin-top: 5px;
+           /*font-weight: 700 !important;*/
+          }
      </style>
      
      
@@ -293,7 +306,7 @@ else{header("location: index.php");}
  <div style="background-color: gray; border-radius: 25px; padding-left: 20px; padding-bottom: 20px;" class="container">
     
  <!---heading---->
-     <h1 class="heading" style="text-align: center; font-weight: 1000 " > USER PROFILE<img src="images/Icon2.png" class="userIcon"></h1><hr></hr>
+     <h1 class="heading" style="text-align: center; font-weight: 1000 " > USER PROFILE<img src="images/Icon2.png" class="userIcon"></h1>
   <!---Form starting----> 
   <div class="row ">
    <!--- For Name---->
@@ -302,7 +315,7 @@ else{header("location: index.php");}
            <div class="col-xs-4">
                      <label class="FullName"> Name :</label> </div>
              <div class="col-xs-8">
-              <label class="FullName"> <?php echo $rows["full name"];?></label> </div>
+              <label class="info"> <?php echo $rows["full name"];?></label> </div>
                  
              </div>
           </div>
@@ -314,7 +327,7 @@ else{header("location: index.php");}
            <div class="col-xs-4">
                      <label class="FullName"> Year:</label> </div>
              <div class="col-xs-8">
-              <label class="FullName"> <?php echo $rows["year"];?></label> </div>
+              <label class="info"> <?php echo $rows["year"];?></label> </div>
                  
              </div>
           </div>
@@ -326,7 +339,7 @@ else{header("location: index.php");}
            <div class="col-xs-4">
                      <label class="FullName"> Department:</label> </div>
              <div class="col-xs-8">
-              <label class="FullName"> <?php echo $rows["division"];?></label> </div>
+              <label class="info"> <?php echo $rows["division"];?></label> </div>
                  
              </div>
           </div>
@@ -338,7 +351,7 @@ else{header("location: index.php");}
            <div class="col-xs-4">
                      <label class="FullName"> Email:</label> </div>
              <div class="col-xs-8">
-              <label class="FullName"><?php echo $_SESSION['email']?></label> </div>
+              <label class="info"><?php echo $_SESSION['email']?></label> </div>
                  
              </div>
           </div>
@@ -349,12 +362,12 @@ else{header("location: index.php");}
            <div class="col-xs-4">
                      <label class="FullName">student ID:</label> </div>
              <div class="col-xs-8">
-              <label class="FullName"> <?php echo $rows["student id"];?></label> </div>
+              <label class="info"> <?php echo $rows["student id"];?></label> </div>
+            </div>
                  
              </div>
           </div>
      </div>
-                 </form>
 
 </div>
 </body>

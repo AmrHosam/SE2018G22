@@ -69,12 +69,12 @@ if ($row = $result->fetch_assoc()) {
     <label for="exampleFormControlSelect1" dir="ltr" style="margin-right:10px">choose your request | اختر طلبك</label>
    
   <select name="type" lang="ar" class="form-control form-control-lg" id="exampleFormControlSelect1" rows="3">
-     <option value="بيان درجات">بيان درجات</option>
-  <option value="كارنيه بدل فاقد">كارنيه بدل فاقد</option>
-  <option value="كارنيه مترو">كارنيه مترو</option>
- <option value="شهادة قيد">شهادة قيد</option>
-   <option value="تأجيل امتحانات">تأجيل امتحانات</option>
-   <option value="شهادة تخرج">شهادة تخرج</option>
+     <option value="A">بيان درجات</option>
+  <option value="B">كارنيه بدل فاقد</option>
+  <option value="C">كارنيه مترو</option>
+ <option value="D">شهادة قيد</option>
+   <option value="E">تأجيل امتحانات</option>
+   <option value="F">شهادة تخرج</option>
     </select>
   </div>
 </select>
@@ -136,11 +136,11 @@ if ($row = $result->fetch_assoc()) {
       <label for="inputState">الفرقة</label>
     </div>
       <select name="year" id="inputState" class="form-control" style="font-size:90%">
-        <option value="الاعدادية">الاعدادية</option>
-		<option value="الاولى">الاولى</option>
-		<option value="الثانية">الثانية</option>
-		<option value="الثالثة">الثالثة</option>
-		<option value="الرابعة">الرابعة</option>
+        <option value="1">الاعدادية</option>
+    <option value="2">الاولى</option>
+    <option value="3">الثانية</option>
+    <option value="4">الثالثة</option>
+    <option value="5">الرابعة</option>
       </select>
     </div>
   
@@ -203,7 +203,6 @@ $('#arabic').removeClass('col-md-6');
         }
     });
 }); 
-
 </script>
 </div>
  
