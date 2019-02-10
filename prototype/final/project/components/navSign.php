@@ -7,6 +7,7 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
 </head>
      <style type="text/css">
+        
          .smallImge{
              height: 49px;
              width: 49px;
@@ -107,6 +108,16 @@
           .nav-link:hover{
               color: black !important;
           }
+           @media only screen and (max-width: 600px) {
+                         .nav-item{
+                color: black;
+                         border-bottom-color: #800000;
+              border: solid;
+                background-color:white;
+                   opacity: 1; 
+                   z-index: 5;
+          }
+         }
                     /*comment*/
           @media only screen and (max-width: 991px){
 .dropdown-menu
@@ -122,13 +133,11 @@
 {
   margin-top: 2% !important;
   margin-bottom: 2% !important;
-
 }
 .signupbutton
 {
   margin-top: 1% !important;
     margin-bottom: 1% !important;
-
 }
 }
 @media only screen and (max-width: 765px){
@@ -146,7 +155,6 @@
 {
   margin-top: 2% !important;
   margin-bottom: 2% !important;
-
 }
 .signupbutton
 {
@@ -171,13 +179,11 @@
 {
   margin-top: 2% !important;
   margin-bottom: 2% !important;
-
 }
 .signupbutton
 {
   margin-top: 1% !important;
     margin-bottom: 1% !important;
-
 }
 }
      </style>
