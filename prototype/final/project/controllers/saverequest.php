@@ -15,6 +15,8 @@ $grad_year = $_POST['gradyear'];
 $department = $_POST['department'];
 $birth_date = $_POST['birth_date'];
 $student_id = $_SESSION['id'];
+$state = 0;
+$seen = 0;
 /* send to database and error checking*/
 if ($_SESSION['new_user'] === true) { //checks if the user already has an account to avoid entering duplicate users
     //prepare statements are used to avoid sql injection
@@ -24,7 +26,7 @@ if ($_SESSION['new_user'] === true) { //checks if the user already has an accoun
     $stmt1 = $link->prepare("UPDATE `students` SET student_id=?, name_ar=?,name_en=?,`address`=?
         ,mobile_number=?,`year`=?,department=?,birth_date=?,grad_year=? WHERE student_id = " . $student_id);
 }
-$stmt2 = $link->prepare("INSERT INTO `requests` (student_id, `type`, reason, destination) VALUES (?,?,?,?)");
+$stmt2 = $link->prepare("INSERT INTO `requests` (student_id, `type`, reason, destination, state, seen) VALUES (?,?,?,?,?,?)");
 /************************************************************************/
 if (false === $stmt1) {
     die('prepare() failed: ' . htmlspecialchars($link->error));
@@ -33,9 +35,9 @@ if (false === $stmt2) {
     die('prepare() failed: ' . htmlspecialchars($link->error));
 }
 /************************************************************************/
-$rc1 = $stmt1->bind_param('issssissi', $student_id, $name_ar, $name_en, $address, $mobile, $year,
+$rc1 = $stmt1->bind_param('isssssssi', $student_id, $name_ar, $name_en, $address, $mobile, $year,
     $department, $birth_date, $grad_year);
-$rc2 = $stmt2->bind_param('isss', $student_id, $type, $reason, $destination);
+$rc2 = $stmt2->bind_param('isssii', $student_id, $type, $reason, $destination, $state, $seen);
 /************************************************************************/
 if (false === $rc1) {
     die('bind_param() failed: ' . htmlspecialchars($stmt1->error));

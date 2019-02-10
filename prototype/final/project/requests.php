@@ -1,3 +1,21 @@
+<?php
+session_start();
+$request=0;
+ if (strpos($_SESSION['email'], "@employees.com") !== false) {
+
+include_once("connect.php");
+$query = "SELECT requests.id, requests.type, students.name_ar, students.year, students.department, users.division, users.`student id` FROM requests
+		JOIN students ON students.student_id = requests.student_id
+		JOIN users ON users.id = requests.student_id
+		WHERE requests.state = 0 LIMIT 1";
+if ($results = mysqli_query($link,$query)){
+$count = mysqli_num_rows($results);
+if($count > 0){
+	$request=1;}
+$row=mysqli_fetch_array($results);}
+}
+else{header("location: index.php");}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,34 +37,38 @@
 <body style="background-color: #D3D3D3">
 <div class="form" style="background-color: white; border-style: outset;">
 	<div class="title">
-		<p style="text-align: center; font-size: 20px; font-weight: 650; margin: 5px;">Certificate of registration</p>
+		<p style="text-align: center; font-size: 20px; font-weight: 650; margin: 5px;"><?=($request)?$row["type"]:"No Pending Requests"?></p>
 	</div>
 	<hr style="border-color: black !important; border-width: 1.5px; margin: 5px;">
 	<div class="field" style="margin-top: 10px;">
 		<p style="float: left;margin-right: 10px; font-weight: 550;">Full Name:</p>
-		<p>Amr Hossam Ali</p>
+		<p><?=$row["name_ar"]?></p>
 	</div>
 	<div class="field">
 		<p style="float: left;margin-right: 10px; font-weight: 550;">Year:</p>
-		<p>3</p>
+		<p><?=$row["year"]?></p>
 	</div>
 	<div class="field">
 		<p style="float: left;margin-right: 10px; font-weight: 550;">Department:</p>
-		<p>Electrical</p>
+		<p><?=$row["department"]?></p>
 	</div>
 	<div class="field">
 		<p style="float: left;margin-right: 10px; font-weight: 550;">Major:</p>
-		<p>Computer</p>
+		<p><?=$row["division"]?></p>
 	</div>
 	<div class="field">
 		<p style="float: left;margin-right: 10px; font-weight: 550;">Student ID:</p>
-		<p>15202</p>
+		<p><?=$row["student id"]?></p>
 	</div>
 	<div class="field">
 	<img src="images/question.jpg" style="width:400px;height: 200px; display: block; margin:auto;">
 	</div>
 </div>
+<form action="controllers/updaterequest.php" method="get">
+<input type="hidden" name="clear" value="0">
+<input type="hidden" name="id" value="<?=$row["id"]?>">
 	<input type="submit" name="next" value="Next" style="background-color: transparent; border-radius: 7px; border-color: black;display: block;margin: auto; color: brown; font-weight: 500; font-size: 18px; padding-bottom: 10px; padding-top: 10px; padding-right: 15px; padding-left: 15px; ">
+</form>
 </div>
 </body>
 </html>

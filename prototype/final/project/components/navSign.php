@@ -7,7 +7,6 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
 </head>
      <style type="text/css">
-        
          .smallImge{
              height: 49px;
              width: 49px;
@@ -108,17 +107,6 @@
           .nav-link:hover{
               color: black !important;
           }
-           @media only screen and (max-width: 991px) {
-                     .nav-item{
-                
-                          border: solid;
-                         border-color: white;
-             
-                background-color:#800000;
-                   opacity: 1; 
-                   z-index: 5;
-          }
-         }
                     /*comment*/
           @media only screen and (max-width: 991px){
 .dropdown-menu
@@ -134,11 +122,13 @@
 {
   margin-top: 2% !important;
   margin-bottom: 2% !important;
+
 }
 .signupbutton
 {
   margin-top: 1% !important;
     margin-bottom: 1% !important;
+
 }
 }
 @media only screen and (max-width: 765px){
@@ -156,6 +146,7 @@
 {
   margin-top: 2% !important;
   margin-bottom: 2% !important;
+
 }
 .signupbutton
 {
@@ -180,11 +171,13 @@
 {
   margin-top: 2% !important;
   margin-bottom: 2% !important;
+
 }
 .signupbutton
 {
   margin-top: 1% !important;
     margin-bottom: 1% !important;
+
 }
 }
      </style>
@@ -218,10 +211,17 @@
                       <i class="fa fa-bell-o" style="font-size:30px;color:white"></i>
             </a>
             <div style="" class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
+			<?php
+			if (strpos($_SESSION['email'], "@employees.com") === false) {
+				include_once('connect.php');
+				$query = "SELECT type FROM `requests` WHERE `state` = 1 AND  `seen` = 0 AND student_id ='".$_SESSION['id']."'";
+				if ($result = mysqli_query($link, $query)) {
+					while($row = mysqli_fetch_array($result)){
+				?>
+					<a class="notification dropdown-item" href="#">تم استخراج <?=$row["type"]?></a>
+			<?php }}} ?>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a id="clear" class="dropdown-item" style="text-align: center;" href="#">Clear</a>
         </div>
       </li>
       <li style="list-style-type: none; margin-right: 30px;" class="nav-item dropdown" style="" >
@@ -236,5 +236,12 @@
       </li>
   </div>
 </nav>
+<script type="text/javascript">
+		$(document).ready(function() {
+			$("#clear").click(function() {
+				$(".notification").html("");
+			}); 
+		}); 
+</script>
 </body>
 </html>

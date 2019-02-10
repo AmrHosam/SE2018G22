@@ -6,7 +6,6 @@ session_start();
     }
 else {header("location: index.php");}
 ?>
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -109,7 +108,7 @@ else {header("location: index.php");}
           }
           body {
               opacity: 1 ;
-    background-image: url("images/new_homePage.jpg");
+    background-image: url("images/s3.jpg");
              
      background-repeat: no-repeat;
     background-size:100% 100%;
@@ -130,23 +129,6 @@ else {header("location: index.php");}
           .nav-link:hover{
               color: black !important;
           }
-                 @media only screen and (max-width: 991px) {
- 
-      .buttons{
-             border:solid;
-            background-color: #800000;
-            width: 150px;
-             height: 150px;
-              border-radius: 50%;
-          align-content: center;
-          
-          margin: 15%;
-          
-                      
-  }
- 
-            
-}
      </style>
   </head>
   <body>

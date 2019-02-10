@@ -107,17 +107,6 @@
           .nav-link:hover{
               color: black !important;
           }
-         @media only screen and (max-width: 991px) {
-                     .nav-item{
-                
-                          border: solid;
-                         border-color: white;
-             
-                background-color:#800000;
-                   opacity: 1; 
-                   z-index: 5;
-          }
-         }
                     /*comment*/
           @media only screen and (max-width: 991px){
 .dropdown-menu
@@ -133,11 +122,13 @@
 {
   margin-top: 2% !important;
   margin-bottom: 2% !important;
+
 }
 .signupbutton
 {
   margin-top: 1% !important;
     margin-bottom: 1% !important;
+
 }
 }
 @media only screen and (max-width: 765px){
@@ -155,6 +146,7 @@
 {
   margin-top: 2% !important;
   margin-bottom: 2% !important;
+
 }
 .signupbutton
 {
@@ -179,11 +171,13 @@
 {
   margin-top: 2% !important;
   margin-bottom: 2% !important;
+
 }
 .signupbutton
 {
   margin-top: 1% !important;
     margin-bottom: 1% !important;
+
 }
 }
      </style>
@@ -227,11 +221,13 @@
            <form   class= form-inline" style="text-align: center;" method="post" action="controllers/signin.php">
             Have An Account ? <br>
           <input class="form-control mr-sm-2" name="email" type="textbox" placeholder="Enter Your Email" style="margin-top: 5%"  required> 
+
           <input class="form-control mr-sm-2" name="password" type="Password" placeholder="Enter Your Password"  style="margin-top: 8%" required><br>
           <div class="dropdown-divider"></div>
            <button  style=" width: 60%;margin-top: 10%; margin-bottom: 5%;border-radius: 30px; font-size: 18px; background-color: #800000;color: white;border-color: #800000" class="btn btn-secondary btn-sm" type="submit" name="login_students">Sign In</button> 
            </form>
           <p style="margin:0px; font-size: 15px;">Don't Have an Account Yet?</p>
+
           <button onclick="location.href='RightRegistration.php';" style=" width: 60%;margin-top: 5%;border-radius: 30px;font-size: 18px; background-color: white;color: #800000;border-color: #800000;border-width: 2px;" class="btn btn-secondary btn-sm" type="submit" name="Signup" >Sign Up</button></a>
                
         

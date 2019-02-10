@@ -28,7 +28,7 @@ if ($row = $result->fetch_assoc()) {
 <!-- <link href="css/bootstrap-rtl.css" rel="stylesheet" />-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!--<script src="js/bootstrap.min.js"></script>-->
-    <title>Requests</title>
+    <title>Hello, world!</title>
   </head>
   <style type="text/css">
   #requests{font-size:180%;}
@@ -48,13 +48,13 @@ if ($row = $result->fetch_assoc()) {
       .container{padding:20px;}
   </style>
   <body>
-
+  
 
 <div class="bimg">
 </div>
 
 <div dir="rtl" lang="ar" class="jumbotron">
-
+  
 
 <div dir="rtl" class="container"> 
  <div class="form-group row" dir="rtl"  id="requests" >
@@ -62,19 +62,19 @@ if ($row = $result->fetch_assoc()) {
 </div>
 
   <hr class="my-4">
-
-
+ 
+  
   <form action="controllers/saverequest.php" method="post">
    <div class="form-group row" dir="rtl">
     <label for="exampleFormControlSelect1" dir="ltr" style="margin-right:10px">choose your request | اختر طلبك</label>
-
+   
   <select name="type" lang="ar" class="form-control form-control-lg" id="exampleFormControlSelect1" rows="3">
-     <option value="A">بيان درجات</option>
-  <option value="B">كارنيه بدل فاقد</option>
-  <option value="C">كارنيه مترو</option>
- <option value="D">شهادة قيد</option>
-   <option value="E">تأجيل امتحانات</option>
-   <option value="F">شهادة تخرج</option>
+     <option value="بيان درجات">بيان درجات</option>
+  <option value="كارنيه بدل فاقد">كارنيه بدل فاقد</option>
+  <option value="كارنيه مترو">كارنيه مترو</option>
+ <option value="شهادة قيد">شهادة قيد</option>
+   <option value="تأجيل امتحانات">تأجيل امتحانات</option>
+   <option value="شهادة تخرج">شهادة تخرج</option>
     </select>
   </div>
 </select>
@@ -89,89 +89,89 @@ if ($row = $result->fetch_assoc()) {
   <div class="form-group row edge" dir="rtl" >
       <label for="inputEmail4" >الاسم باللغة العربية</label> 
     </div>
-
-      <input name="name_ar" type="text" class="form-control" id="inputEmail4" required>
+    
+      <input name="name_ar" type="text" class="form-control" id="inputEmail4" >
  </div>
     <div class="form-group col-md-6 qeid">
   <div class="form-group row edge" dir="rtl">
       <label for="inputEmail4">الاسم باللغة الانجليزية</label>
       </div>
-    <input name="name_en" type="text" class="form-control" id="inputEmail4"  dir="ltr" required>
+    <input name="name_en" type="text" class="form-control" id="inputEmail4"  dir="ltr">
     </div>
   </div>
-
-
+ 
+    
  <div class="form-group" dir="rtl">
     <div class="form-group row edge" dir="rtl">
   <label for="inputAddress" >العنوان</label>
   </div>
-    <input name="address" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required>
-
+    <input name="address" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+  
  </div>
-
+ 
 <div class="form-group">
 <div class="form-group row edge" dir="rtl">
     <label for="exampleFormControlTextarea1" id="reasons">سبب الاستخراج</label>
   </div>
-  <textarea name="reason" class="form-control" id="exampleFormControlTextarea1" rows="2" required></textarea>
+  <textarea name="reason" class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
   </div>
-
+  
   <div class="form-group qeid">
 <div class="form-group row edge" dir="rtl">
     <label for="exampleFormControlTextarea1">الجهة الموجهة إليها</label>
   </div>
-  <textarea name="qeid" class="form-control" id="exampleFormControlTextarea1" rows="2" required></textarea>
+  <textarea name="qeid" class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
   </div>
-
+  
   <div class="row">
     <div class="form-group col-md-3">
   <div class="form-group row edge" dir="rtl">
       <label for="inputCity">رقم الهاتف</label>
 </div>    
-  <input name="mobile" type="text" class="form-control" id="inputCity" required>
-
+  <input name="mobile" type="text" class="form-control" id="inputCity">
+    
   </div>
     <div class="form-group col-md-3 student">
   <div class="form-group row edge" dir="rtl">
       <label for="inputState">الفرقة</label>
     </div>
-      <select name="year" id="inputState" class="form-control" style="font-size:90%" required>
-        <option value="1">الاعدادية</option>
-		<option value="2">الاولى</option>
-		<option value="3">الثانية</option>
-		<option value="4">الثالثة</option>
-		<option value="5">الرابعة</option>
+      <select name="year" id="inputState" class="form-control" style="font-size:90%">
+        <option value="الاعدادية">الاعدادية</option>
+		<option value="الاولى">الاولى</option>
+		<option value="الثانية">الثانية</option>
+		<option value="الثالثة">الثالثة</option>
+		<option value="الرابعة">الرابعة</option>
       </select>
     </div>
-
+  
   <div class="form-group col-md-3 graduate"  style="display:none;" >
   <div class="form-group row edge" dir="rtl">
       <label for="inputZip" >سنة التخرج</label>
     </div>
-      <input name="gradyear" type="text" class="form-control" id="inputZip" required>
+      <input name="gradyear" type="text" class="form-control" id="inputZip">
     </div>
-
+  
   <div class="form-group col-md-3">
   <div class="form-group row edge" dir="rtl">
       <label for="inputZip" >القسم و الشعبة</label>
     </div>
-      <input name="department" type="text" class="form-control" id="inputZip" required>
+      <input name="department" type="text" class="form-control" id="inputZip">
     </div>
-
-
+  
+  
     <div class="form-group col-md-3">
   <div class="form-group row edge" dir="rtl">
       <label for="inputZip" >تاريخ الميلاد</label>
     </div>
-       <input type="date" name="birth_date" required>
+      <input name="birth_date" type="text" class="form-control" id="inputZip">
     </div>
   </div>
-
-
+  
+  
  <div class="form-group row edge" dir="rtl">
   <button type="submit" class="btn btn-primary">تأكيد</button>
   </div>
-
+  
 </form>
 <script type="text/javascript">
 function showDiv() {
@@ -203,9 +203,10 @@ $('#arabic').removeClass('col-md-6');
         }
     });
 }); 
+
 </script>
 </div>
-
+ 
 </div>
 </div>  
   </body>
