@@ -108,12 +108,13 @@
           .nav-link:hover{
               color: black !important;
           }
-           @media only screen and (max-width: 600px) {
-                         .nav-item{
-                color: black;
-                         border-bottom-color: #800000;
-              border: solid;
-                background-color:white;
+           @media only screen and (max-width: 991px) {
+                     .nav-item{
+                
+                          border: solid;
+                         border-color: white;
+             
+                background-color:#800000;
                    opacity: 1; 
                    z-index: 5;
           }
