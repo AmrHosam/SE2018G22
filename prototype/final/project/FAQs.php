@@ -156,12 +156,12 @@ font-color:black;
    <div class="card">
     <div class="card-header" id="headingFive" >
       <h5 class="mb-0">
-        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive" dir="ltr" style="font-size:120%">
+        <button class="btn btn-link collapsed" onclick="document.location.href='chat.php';" dir="ltr" style="font-size:120%">
           still need to contact us?
         </button>
       </h5>
     </div>
-    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+<!--     <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
       <div class="card-body" >
        <div class="answer">  
 <div class="form-group">
@@ -176,7 +176,7 @@ font-color:black;
       </div>
 	  </div>
     </div>
-	</div>
+	</div> -->
   </div>
   
 </div>

@@ -3,10 +3,10 @@ session_start();
 include_once('components/navIndex.php');
 $_SESSION['msg']="";
 if($_SESSION['msg']){
-	$error=$_SESSION['msg'];
-	echo"<p>$error</p>";
-	
-	
+    $error=$_SESSION['msg'];
+    echo"<p>$error</p>";
+    
+    
 }
 session_destroy();
 ?>
@@ -20,23 +20,23 @@ session_destroy();
 <head>
      <meta charset="UTF-8">
      <title>Registration Form</title>
-     	<meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     <style type="text/css">
     /*-----Background-----*/
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 body{
-	 background-image:url(https://apis.mail.yahoo.com/ws/v3/mailboxes/@.id==VjN-4SYBt-AkaqRIygm9jZcjegiiKwHHcbIk8vjkqMly9QPHOlxCgsyX48ZDBlLh9p044QS589m2ULn4HOf3kMCF_g/messages/@.id==AIdrpVREpxi0W9mzDQZNSH-cPIA/content/parts/@.id==2/thumbnail?appId=YMailNorrin&downloadWhenThumbnailFails=true&pid=2);
-	 background-repeat:no-repeat;
-	 background-size:cover;
-	 width:100%;
-	 height:100vh;
-	 overflow:auto;
-	 
+     background-image:url(https://apis.mail.yahoo.com/ws/v3/mailboxes/@.id==VjN-4SYBt-AkaqRIygm9jZcjegiiKwHHcbIk8vjkqMly9QPHOlxCgsyX48ZDBlLh9p044QS589m2ULn4HOf3kMCF_g/messages/@.id==AIdrpVREpxi0W9mzDQZNSH-cPIA/content/parts/@.id==2/thumbnail?appId=YMailNorrin&downloadWhenThumbnailFails=true&pid=2);
+     background-repeat:no-repeat;
+     background-size:cover;
+     width:100%;
+     height:100vh;
+     overflow:auto;
+     
 }
 /*-----for border----*/
 } 
 .container{
-	font-family:Roboto,sans-serif;
+    font-family:Roboto,sans-serif;
     background:gray !important;    
     border-radius: 25px;
     padding-left: 20px;
@@ -69,7 +69,7 @@ body{
         }
                 /*--- for label of Student ID---*/
 .StudentID{
-	 margin-left: 1px;s
+     margin-left: 1px;s
      font-family: sans-serif;
      font-size: 14px;
      color: white;
@@ -77,23 +77,23 @@ body{
 }
         /*--- for label of Full name---*/
 .FullName{
-	 margin-left: 1px;
+     margin-left: 1px;
      font-family: sans-serif;
      font-size: 14px;
      color: white;
      margin-top: 5px;
 }
 #lname{
-	 margin-top:5px;
+     margin-top:5px;
 }
-	  
+      
 /*---for heading-----*/
 .heading{
-	 text-decoration:bold;
-	 text-align : left;
-	 font-size:30px;
-	 color:#F96;
-	 padding-top:10px;
+     text-decoration:bold;
+     text-align : left;
+     font-size:30px;
+     color:#F96;
+     padding-top:10px;
      color: #800000;
 }
         label
@@ -108,7 +108,7 @@ body{
 /*-------for email----------*/
   /*------label----*/
 #email{
-	  margin-top: 5px;
+      margin-top: 5px;
 }
 /*-----------for Password--------*/
      /*-------label-----*/
@@ -119,7 +119,7 @@ body{
      margin-top: 13px;
 }
 .pass{
-	 color: white;
+     color: white;
      margin-top: 9px;
      font-size: 14px;
      font-family: sans-serif;
@@ -130,24 +130,24 @@ body{
 }
       /*----------label--------*/
 .pno{
-	 font-size: 18px;
+     font-size: 18px;
      margin-left: -13px;
      margin-top: 10px;
      color: #ff9;
-	
-}	
+    
+}   
      /*--------------label---------*/
 /*------------For submit button---------*/
 .sbutton{
-	 color: white;
+     color: white;
      font-size: 20px;
      border: 1px solid white;
      background-color: #080808;
      width: 32%;
      margin-left: 41%;
      margin-top: 16px;
-	 box-shadow: 0px 2px 2px 0px white;
-  	   
+     box-shadow: 0px 2px 2px 0px white;
+       
    }
    select{
     margin-top: 10px;
@@ -157,9 +157,9 @@ body{
     font-size: 17px;
     font-weight: 400;
    }
-	
-}	 
-	  
+    
+}    
+      
     </style>
 </head>
     
@@ -168,64 +168,65 @@ body{
     
  <!---heading---->
      <h1 class="heading" style="text-align: center; font-weight: 700;"> Registration-Form</h1><hr></hr>
-	<!---Form starting----> 
-	 <form action="controllers/signup.php" method="post">
-	<div style="margin-left: 5%;" class="row ">
-	 <!--- For Name---->
+    <!---Form starting----> 
+     <form action="controllers/signup.php" method="post" id="registerform">
+    <div style="margin-left: 5%;" class="row ">
+     <!--- For Name---->
          <div class="col-sm-12">
              <div class="row form-group">
-			     <div class="col-xs-4">
-          	         <label class="FullName"> Full Name :</label> </div>
-		         <div class="col-xs-8">
-		             <input type="text" name="fname" id="fname" placeholder="Enter your full Name" class="form-control" required)>
+                 <div class="col-xs-4">
+                     <label class="FullName"> Full Name :</label> </div>
+                 <div class="col-xs-8">
+                     <input type="text" name="fname" id="fname" placeholder="Enter your full Name" class="form-control" required>
              </div>
-		      </div>
-		 </div>
-		 
-		 
+              </div>
+         </div>
+         
+         
          <div class="col-sm-12">
-		     <div class="row form-group">
-			     <div class="col-xs-4">
+             <div class="row form-group">
+                 <div class="col-xs-4">
                      <label class="StudentID"> Student ID :</label></div>
-				<div class ="col-xs-8">	 
-		             <input type="text" name="lname" id="lname" placeholder="Enter your ID" class="form-control last" required>
+                <div class ="col-xs-8">  
+                     <input type="text" name="lname" id="lname" placeholder="Enter your ID" class="form-control last" required>
                 </div>
-		     </div>
-		 </div>
+             </div>
+         </div>
      <!-----For email---->
-		 <div class="col-sm-12">
-		     <div class="row form-group">
-			     <div class="col-xs-4">
-		             <label class="mail" >Email :</label></div>
-			     <div class="col-xs-8"	>	 
-			          <input type="email" name="email"  id="email"placeholder="Enter your email" class="form-control" required>
-		         </div>
-		     </div>
-		 </div>
-	 <!-----For Password and confirm password---->
+         <div class="col-sm-12">
+             <div class="row form-group">
+                 <div class="col-xs-4">
+                     <label class="mail" >Email :</label></div>
+                 <div class="col-xs-8"  >    
+                      <input type="email" name="email"  id="email"placeholder="Enter your email" class="form-control" required>
+                 </div>
+             </div>
+         </div>
+     <!-----For Password and confirm password---->
           <div class="col-sm-12">
-		         <div class="row form-group">
-				     <div class="col-xs-4">
-		 	              <label class="pass">Password :</label></div>
-				  <div class="col-xs-8">
-			             <input type="password" name="Cpassword" id="password" placeholder="Enter your Password" class="form-control" required>
-				 </div>
+                 <div class="row form-group">
+                     <div class="col-xs-4">
+                          <label class="pass">Password :</label></div>
+                  <div class="col-xs-8">
+                         <input type="password" name="Cpassword" id="password" placeholder="Enter your Password" class="form-control" required>
+                 </div>
           </div>
-		  </div>
-
-		    <div class="col-sm-12">
-		         <div class="row form-group">
-				     <div class="col-xs-4">
-		 	              <label class="pass">Confirm Password :</label></div>
-				  <div class="col-xs-8">
-			             <input type="password" name="password" id="password" placeholder="Enter your Password" class="form-control" required>
-				 </div>
           </div>
-		  </div>
 
-		 	<div class="col-sm-12">
-		     <div class="row form-group">
-			     <div class="col-xs-4">	 
+            <div class="col-sm-12">
+                 <div class="row form-group">
+                     <div class="col-xs-4">
+                          <label class="pass">Confirm Password :</label></div>
+                  <div class="col-xs-8">
+                         <input type="password" name="password" id="confirm_password" placeholder="Enter your Password" class="form-control" required>
+                         <span id='message'></span>
+                 </div>
+          </div>
+          </div>
+
+            <div class="col-sm-12">
+             <div class="row form-group">
+                 <div class="col-xs-4">  
                          <p>  <label class="year" required > Year:</label></div>
                              <select name="year" >
                              <option>Prepratory</option>
@@ -236,10 +237,10 @@ body{
                              </select>
                          </p>
                        </div>
-		     </div>
-    		 	<div class="col-sm-12">
-		     <div class="row form-group">
-			     <div class="col-xs-4">
+             </div>
+                <div class="col-sm-12">
+             <div class="row form-group">
+                 <div class="col-xs-4">
                         <p>  <label style="margin-left: 2px;" class="Department" required > Division:</label></div>
                    <select name="division"> \\Electrical divisions
                              <option>Computer</option>
@@ -260,10 +261,33 @@ body{
                       </select>
                          </p>
                     <div class="col-sm-12">
-     <button  name="submit" style="cursor: pointer; display: block; margin: auto; margin-top: 20px; border-radius: 10px; border-color:#800000;background-color: transparent;width: 95px; height: 45px;color: black; font-weight: 500;font-size: 22px;" type="submit">Submit</button>
-		  </div>
+     <button  name="submit" style="cursor: pointer; display: block; margin: auto; margin-top: 20px; border-radius: 10px; border-color:#800000;background-color: transparent;width: 95px; height: 45px;color: black; font-weight: 500;font-size: 22px;" id="submitButton" type="submit">Submit</button>
+          </div>
                  </form>
 </div>
 </div>
-</body>		
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+    $('#registerform').find(':submit').click(function(e) {
+        if($('#email').val() != "")
+        if( ! isCorrect( $('#email').val() ) ) {
+            e.preventDefault(); // Prevent the form from submitting
+            alert('You can only register with an @eng.asu.edu.eg email address!');
+            return false;
+        }
+    });
+});
+
+function isCorrect( address ) {
+    return address.indexOf("@eng.asu.edu.eg", this.length - 10) !== -1;
+}
+
+$('#password, #confirm_password').on('keyup', function () {
+  if ($('#password').val() == $('#confirm_password').val()) {
+    $('#message').html('Matching').css('color', 'green');
+  } else 
+    $('#message').html('Not Matching').css('color', 'red');
+});
+</script>
+</body>     
 </html>
