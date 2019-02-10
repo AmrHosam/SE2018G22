@@ -130,7 +130,7 @@ else {include_once('components/navIndex.php');}
           .nav-link:hover{
               color: black !important;
           }
-                   @media only screen and (max-width: 600px) {
+                 @media only screen and (max-width: 991px) {
  
       .buttons{
              border:solid;
