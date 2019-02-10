@@ -107,9 +107,9 @@
           .nav-link:hover{
               color: black !important;
           }
-          @media only screen and (max-width: 600px) {
+         @media only screen and (max-width: 991px) {
                      .nav-item{
-                color: black !important; 
+                
                           border: solid;
                          border-color: white;
              
