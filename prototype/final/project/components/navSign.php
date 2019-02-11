@@ -267,7 +267,7 @@ if (strpos($_SESSION['email'], "@employees.com") === false) {
                             <?=$row["type"]?></a>
                         <?php }}}?>
                         <div class="dropdown-divider"></div>
-                        <a id="clear" class="dropdown-item" style="text-align: center;" href="#">Clear</a>
+                        <a id="clear" onclick="location.href='controllers/updaterequest.php?clear=1';" class="dropdown-item" style="text-align: center;" href="#">Clear All</a>
                     </div>
                 </li>
                 <li style="list-style-type: none; margin-right: 30px;" class="nav-item dropdown" style="">
@@ -283,13 +283,6 @@ if (strpos($_SESSION['email'], "@employees.com") === false) {
                 </li>
             </div>
         </nav>
-        <script type="text/javascript">
-        $(document).ready(function() {
-            $("#clear").click(function() {
-                $(".notification").html("");
-            });
-        });
-        </script>
     </body>
 
 </html>
