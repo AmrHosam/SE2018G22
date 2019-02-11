@@ -1,9 +1,11 @@
 <?php
+$count = 0;
+if (strpos($_SESSION['email'], "@employees.com") === false) {
 include_once 'connect.php';
 $stmt = $link->prepare("SELECT COUNT(*) FROM `requests` WHERE `state` = 1 AND  `seen` = 0 AND student_id ='" . $_SESSION['id'] . "'");
 $stmt->execute();
 $count = $stmt->get_result();
-$count = $count->fetch_assoc()['COUNT(*)'];
+$count = $count->fetch_assoc()['COUNT(*)'];}
 ?>
 <!DOCTYPE html>
 <html>
@@ -249,8 +251,10 @@ $count = $count->fetch_assoc()['COUNT(*)'];
                 <li style="list-style-type: none;" class="nav-item dropdown" style="">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-bell-o" style="font-size:30px;color:white"></i><span class="badge badge-light">
-                            <?=$count?></span>
+                        <i class="fa fa-bell-o" style="font-size:30px;color:white"></i>
+                        <?php if($count){?>
+                        <span class="badge badge-light"><?=$count?></span>
+                        <?php }?>
                     </a>
                     <div style="" class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <?php
