@@ -107,6 +107,17 @@
           .nav-link:hover{
               color: black !important;
           }
+         @media only screen and (max-width: 991px) {
+                     .nav-item{
+                color: black !important; 
+                          border: solid;
+                         border-color: white;
+             
+                background-color:#800000;
+                   opacity: 1; 
+                   z-index: 5;
+          }
+         }
                     /*comment*/
           @media only screen and (max-width: 991px){
 .dropdown-menu
