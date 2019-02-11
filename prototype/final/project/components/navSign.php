@@ -1,5 +1,4 @@
 <?php
-session_start();
 include_once 'connect.php';
 $stmt = $link->prepare("SELECT COUNT(*) FROM `requests` WHERE `state` = 1 AND  `seen` = 0 AND student_id ='" . $_SESSION['id'] . "'");
 $stmt->execute();
