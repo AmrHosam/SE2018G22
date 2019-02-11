@@ -133,7 +133,16 @@ $count = $count->fetch_assoc()['COUNT(*)'];
     .nav-link:hover {
         color: black !important;
     }
-
+ @media only screen and (max-width: 991px) {
+                         .nav-item{
+                color: black;
+                         border-bottom-color: #800000;
+              border: solid;
+                background-color:white;
+                   opacity: 1; 
+                   z-index: 5;
+          }
+         }
     /*comment*/
     @media only screen and (max-width: 991px) {
         .dropdown-menu {
