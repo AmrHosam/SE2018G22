@@ -272,14 +272,17 @@ if($count==0)
                         <?php
 if (strpos($_SESSION['email'], "@employees.com") === false) {
     $query = "SELECT type FROM `requests` WHERE `state` = 1 AND  `seen` = 0 AND student_id ='" . $_SESSION['id'] . "'";
-    if ($result = mysqli_query($link, $query)) {
+    if ($result = mysqli_query($link, $query) AND $count>0) {
         while ($row = mysqli_fetch_array($result)) {
             ?>
-                        <a class="notification dropdown-item" href="#">تم استخراج
+                        <a class="notification dropdown-item" style="text-align: center;" href="#">تم استخراج
                             <?=$row["type"]?></a>
-                        <?php }}}?>
+                        <?php }}
+			else if($count==0){ ?>
+			<p class="notification dropdown-item">No Notifications</p>
+			<?php }} ?>
                         <div class="dropdown-divider"></div>
-                        <a id="clear" onclick="location.href='controllers/updaterequest.php?clear=1';" class="dropdown-item" style="text-align: center;" href="#">Clear All</a>
+                        <a id="clear" class="dropdown-item" style="text-align: center;" href="controllers/updaterequest.php?clear=1">Clear All</a>
                     </div>
                 </li>
                 <li style="list-style-type: none; margin-right: 30px;" class="nav-item dropdown" style="">
