@@ -83,7 +83,7 @@ font-color:black;
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
      
 	 <div class="card-body" dir="rtl" lang="ar">
-لسه والله مش عارفين
+سيتم تحديد ميعاد النتيجة يوم السبت الموافق 1-2-2019
       </div>
 	  </div>
     </div>
@@ -94,7 +94,7 @@ font-color:black;
       <h5 class="mb-0">
 	  <div class="form-group row" dir="rtl">
         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" dir="rtl" lang="ar">
-          ادفع المصاريف ازاى 
+          كيف يتم دفع المصاريف 
         </button>
 		</div>
       </h5>
@@ -115,7 +115,7 @@ font-color:black;
       <h5 class="mb-0" dir="rtl" >
         <div class="form-group row" dir="rtl">
 		<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"dir="rtl" lang="ar">
-          كيف يتم تأجيل مادة 
+          متى تظهر نتيجة التربية العسكرية
         </button>
 		</div>
       </h5>
@@ -125,7 +125,7 @@ font-color:black;
 	<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
      
 	  <div class="card-body"dir="rtl" lang="ar">
-	خلى مدام مهجة تقولك
+	فى الاسبوع الثانى من الدراسة
       </div>
 	  </div>
     </div>
@@ -137,7 +137,7 @@ font-color:black;
       <h5 class="mb-0">
         <div class="form-group row" dir="rtl">
 		<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour"dir="rtl" lang="ar">
-          بتفتحوا امتى و تقفلو امتى 
+         ما هى مواعيد مكتب شؤون الطلبة 
         </button>
 		</div>
       </h5>
@@ -147,7 +147,7 @@ font-color:black;
 	<div id="collapseFour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
       
 	  <div class="card-body"dir="rtl" lang="ar">
-		الساعة 9 و نقفل 12 و يوم السبت اجازة و يوم الخميس اجازة الخزنة و بنفتح شباك و نقفل 4 و بكتب كلام كتير
+		من الأحد إلى الخميس من الساعة 9 حتى 12 ظهرا
       </div>
 	  </div>
 	  </div>
