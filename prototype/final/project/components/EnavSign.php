@@ -1,12 +1,3 @@
-<?php
-// $count = 0;
-// if (strpos($_SESSION['email'], "@employees.com") === false) {
-// include_once 'connect.php';
-// $stmt = $link->prepare("SELECT COUNT(*) FROM `requests` WHERE `state` = 1 AND  `seen` = 0 AND student_id ='" . $_SESSION['id'] . "'");
-// $stmt->execute();
-// $count = $stmt->get_result();
-// $count = $count->fetch_assoc()['COUNT(*)'];}
-?>
 <!DOCTYPE html>
 <html>
 
