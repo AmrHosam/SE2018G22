@@ -210,11 +210,11 @@
       </li>
      
       
-         <li class="nav-item">
+<!--          <li class="nav-item">
         <a class="nav-link" href="#">Contact Us</a>
-      </li>
+      </li> -->
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">About</a>
+        <a class="nav-link disabled" href="about.php">About</a>
       </li>
     </ul>
           
