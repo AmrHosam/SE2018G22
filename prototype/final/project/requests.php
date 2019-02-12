@@ -24,7 +24,25 @@ else{header("location: index.php");}
     <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Requests</title>
-	<style type="text/css"></style>
+	<style type="text/css">
+		.label
+		{
+			margin-left: 15px;
+			font-size: 20px;
+			margin-bottom: 0px;
+		}
+		.data
+		{
+			padding-top: 3px;
+			font-weight: 500;
+		}
+		.field
+		{
+			height: auto;
+			overflow: hidden;
+			
+		}
+	</style>
 	<link rel="stylesheet" type="text/css" href="style2.css">
 						<!-- bootstrap -->
 <!-- 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -33,43 +51,41 @@ else{header("location: index.php");}
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> -->
 
     <!--logo of the website-->
-    <link rel="shortcut icon" href="images/question.jpg" type="image/x-icon">
 </head>
 <body style="background-color: #D3D3D3">
-<div class="form" style="background-color: white; border-style: outset;">
+<div class="form" style="background-color: white; border-style: outset; min-height: 300px; display: block; margin: auto; width: 80%; margin-top: 50px;">
 	<div class="title">
 		<p style="text-align: center; font-size: 20px; font-weight: 650; margin: 5px;"><?=($request)?$row["type"]:"No Pending Requests"?></p>
 	</div>
 	<hr style="border-color: black !important; border-width: 1.5px; margin: 5px;">
 	<div class="field" style="margin-top: 10px;">
-		<p style="float: left;margin-right: 10px; font-weight: 550;">Full Name:</p>
-		<p><?=$row["name_ar"]?></p>
+		<p class="label" style="float: left;margin-right: 10px; font-weight: 550;">Full Name:</p>
+		<p class="data"><?=$row["name_ar"]?></p>
 	</div>
 	<div class="field">
-		<p style="float: left;margin-right: 10px; font-weight: 550;">Year:</p>
-		<p><?=$row["year"]?></p>
+		<p class="label" style="float: left;margin-right: 10px; font-weight: 550;">Year:</p>
+		<p class="data"><?=$row["year"]?></p>
 	</div>
 	<div class="field">
-		<p style="float: left;margin-right: 10px; font-weight: 550;">Department:</p>
-		<p><?=$row["department"]?></p>
+		<p class="label" style="float: left;margin-right: 10px; font-weight: 550;">Department:</p>
+		<p class="data"><?=$row["department"]?></p>
 	</div>
 	<div class="field">
-		<p style="float: left;margin-right: 10px; font-weight: 550;">Major:</p>
-		<p><?=$row["division"]?></p>
+		<p class="label" style="float: left;margin-right: 10px; font-weight: 550;">Major:</p>
+		<p class="data"><?=$row["division"]?></p>
 	</div>
 	<div class="field">
-		<p style="float: left;margin-right: 10px; font-weight: 550;">Student ID:</p>
-		<p><?=$row["student id"]?></p>
+		<p class="label" style="float: left;margin-right: 10px; font-weight: 550;">Student ID:</p>
+		<p class="data"><?=$row["student id"]?></p>
 	</div>
-	<div class="field">
+<!-- 	<div class="field">
 	<img src="images/question.jpg" style="width:400px;height: 200px; display: block; margin:auto;">
-	</div>
+	</div> -->
 </div>
 <form action="controllers/updaterequest.php" method="get">
 <input type="hidden" name="clear" value="0">
 <input type="hidden" name="id" value="<?=$row["id"]?>">
-	<input type="submit" name="next" value="Next" style="background-color: transparent; border-radius: 7px; border-color: black;display: block;margin: auto; color: brown; font-weight: 500; font-size: 18px; padding-bottom: 10px; padding-top: 10px; padding-right: 15px; padding-left: 15px; ">
+	<input type="submit" name="next" value="Next" style="background-color: transparent;border-width: 3px; letter-spacing: 2px; ;border-radius: 7px; border-color: brown;display: block;margin: auto; color: black; font-weight: 550; font-size: 18px; padding-bottom: 10px; padding-top: 10px; padding-right: 15px; padding-left: 15px; margin-top: 10px; ">
 </form>
-</div>
 </body>
 </html>
