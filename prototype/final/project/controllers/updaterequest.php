@@ -15,5 +15,8 @@
 	else if($_GET['clear']==1){
 	$query = "UPDATE `requests` SET `seen`= 1 WHERE `state` = 1 AND student_id ='" . $_SESSION['id'] . "'";
 	mysqli_query($link, $query);
-	header('Location: ../homesign.php');}
-?>
+	echo'<script type="text/javascript">
+	javascript:history.go(-1);
+	</script>';
+	//header('Location: ../homesign.php');
+}?>
