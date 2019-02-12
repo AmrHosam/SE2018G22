@@ -100,7 +100,7 @@ body{
         {
             color: black !important;
             display: block;
-            width: 190px;
+            width: 200px;
             font-family: 'Oswald', sans-serif;
             font-size: 20px !important;
             font-weight: 500 !important;
