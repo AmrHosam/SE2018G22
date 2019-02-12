@@ -118,7 +118,7 @@ if ($row = $result->fetch_assoc()) {
                                     <label for="inputEmail4">الاسم باللغة العربية</label>
                                 </div>
 
-                                <input name="name_ar" type="text" class="form-control" id="inputEmail4">
+                                <input name="name_ar" type="text" class="form-control" id="inputEmail4" required>
                             </div>
                             <div class="form-group col-md-6 qeid">
                                 <div class="form-group row edge" dir="rtl">
@@ -133,7 +133,7 @@ if ($row = $result->fetch_assoc()) {
                             <div class="form-group row edge" dir="rtl">
                                 <label for="inputAddress">العنوان</label>
                             </div>
-                            <input name="address" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                            <input name="address" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required>
 
                         </div>
 
@@ -141,7 +141,7 @@ if ($row = $result->fetch_assoc()) {
                             <div class="form-group row edge" dir="rtl">
                                 <label for="exampleFormControlTextarea1" id="reasons">سبب الاستخراج</label>
                             </div>
-                            <textarea name="reason" class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+                            <textarea name="reason" class="form-control" id="exampleFormControlTextarea1" rows="2" required></textarea>
                         </div>
 
                         <div class="form-group qeid">
@@ -156,7 +156,7 @@ if ($row = $result->fetch_assoc()) {
                                 <div class="form-group row edge" dir="rtl">
                                     <label for="inputCity">رقم الهاتف</label>
                                 </div>
-                                <input name="mobile" type="text" class="form-control" id="inputCity">
+                                <input name="mobile" type="text" class="form-control" id="inputCity" required>
 
                             </div>
                             <div class="form-group col-md-3 student">
@@ -183,7 +183,7 @@ if ($row = $result->fetch_assoc()) {
                                 <div class="form-group row edge" dir="rtl">
                                     <label for="inputZip">القسم و الشعبة</label>
                                 </div>
-                                <input name="department" type="text" class="form-control" id="inputZip">
+                                <input name="department" type="text" class="form-control" id="inputZip" required>
                             </div>
 
 
@@ -191,7 +191,7 @@ if ($row = $result->fetch_assoc()) {
                                 <div class="form-group row edge" dir="rtl">
                                     <label for="inputZip">تاريخ الميلاد</label>
                                 </div>
-                                <input name="birth_date" type="text" class="form-control" id="inputZip">
+                                <input name="birth_date" type="date" class="form-control" id="inputZip" required>
                             </div>
                         </div>
 
