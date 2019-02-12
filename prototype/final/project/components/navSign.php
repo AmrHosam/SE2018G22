@@ -5,7 +5,19 @@ include_once 'connect.php';
 $stmt = $link->prepare("SELECT COUNT(*) FROM `requests` WHERE `state` = 1 AND  `seen` = 0 AND student_id ='" . $_SESSION['id'] . "'");
 $stmt->execute();
 $count = $stmt->get_result();
-$count = $count->fetch_assoc()['COUNT(*)'];}
+$count = $count->fetch_assoc()['COUNT(*)'];
+if($count==0)
+{
+    ?>
+    <style type="text/css">
+        #clear
+        {
+            display: none;
+        }
+    </style>
+    <?php
+}
+}
 ?>
 <!DOCTYPE html>
 <html>
