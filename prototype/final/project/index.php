@@ -2,6 +2,8 @@
 session_start();
  if (isset($_SESSION['email'])) {
         /// your code here
+if (strpos($_SESSION['email'], "@employees.com") !== false) {
+header("location: requests.php");}
 		header("location: homesign.php");
     }
 else {include_once('components/navIndex.php');}

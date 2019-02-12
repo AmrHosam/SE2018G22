@@ -1,12 +1,13 @@
-<?php
-	session_start();
-	include_once("components/EnavSign.php");
-	require('connect.php');
-	$query = "SELECT chat.chat_id, chat.user_id,users.`full name` FROM chat INNER JOIN users ON users.id = chat.user_id";
-	$result = mysqli_query($link,$query);
-	//echo $_SESSION['name'];
-	//echo $_SESSION['id'];
-
+<?php  session_start();
+if (strpos($_SESSION['email'], "@employees.com") !== false) {
+include_once("components/EnavSign.php");
+require('connect.php');
+$query = "SELECT chat.chat_id, chat.user_id,users.`full name` FROM chat INNER JOIN users ON users.id = chat.user_id";
+$result = mysqli_query($link,$query);
+//echo $_SESSION['name'];
+//echo $_SESSION['id'];
+}
+else {header("location: index.php");}
 ?>
 <html style="height: 100%;">
 	<head>

@@ -2,7 +2,9 @@
 session_start();
  if (isset($_SESSION['email'])) {
         /// your code here
-		include_once('components/navSign.php');
+if (strpos($_SESSION['email'], "@employees.com") !== false) {
+header("location: requests.php");}
+	include_once('components/navSign.php');
     }
 else {header("location: index.php");}
 ?>

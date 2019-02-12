@@ -5,9 +5,8 @@ $request=0;
 
 include_once("connect.php");
 include_once("components/EnavSign.php");
-$query = "SELECT requests.id, requests.type, students.name_ar, students.year, students.department, users.division, users.`student id` FROM requests
+$query = "SELECT * FROM requests
 		JOIN students ON students.student_id = requests.student_id
-		JOIN users ON users.id = requests.student_id
 		WHERE requests.state = 0 LIMIT 1";
 if ($results = mysqli_query($link,$query)){
 $count = mysqli_num_rows($results);
@@ -58,34 +57,77 @@ else{header("location: index.php");}
 		<p style="text-align: center; font-size: 20px; font-weight: 650; margin: 5px;"><?=($request)?$row["type"]:"No Pending Requests"?></p>
 	</div>
 	<hr style="border-color: black !important; border-width: 1.5px; margin: 5px;">
+	<?php if(!empty($row["name_ar"])){ ?>
 	<div class="field" style="margin-top: 10px;">
-		<p class="label" style="float: left;margin-right: 10px; font-weight: 550;">Full Name:</p>
-		<p class="data"><?=$row["name_ar"]?></p>
+		<p class="label" style="float: right;margin-right: 10px; font-weight: 550;"><strong> :الاسم باللغة العربية</strong></p>
+		<p class="data" style="float: right;"><?=$row["name_ar"]?></p>
 	</div>
+	<?php } ?>
+	<?php if(!empty($row["name_en"])){ ?>
 	<div class="field">
-		<p class="label" style="float: left;margin-right: 10px; font-weight: 550;">Year:</p>
-		<p class="data"><?=$row["year"]?></p>
+		<p class="label" style="float: right;margin-right: 10px; font-weight: 550;"><strong> :الاسم باللغة الانجليزية</strong></p>
+		<p class="data" style="float: right;"><?=$row["name_en"]?></p>
 	</div>
+	<?php } ?>
+	<?php if(!empty($row["address"])){ ?>
 	<div class="field">
-		<p class="label" style="float: left;margin-right: 10px; font-weight: 550;">Department:</p>
-		<p class="data"><?=$row["department"]?></p>
+		<p class="label" style="float: right;margin-right: 10px; font-weight: 550;"><strong> :العنوان</strong></p>
+		<p class="data" style="float: right;"><?=$row["address"]?></p>
 	</div>
+	<?php } ?>
+	<?php if(!empty($row["reason"])){ ?>
 	<div class="field">
-		<p class="label" style="float: left;margin-right: 10px; font-weight: 550;">Major:</p>
-		<p class="data"><?=$row["division"]?></p>
+		<p class="label" style="float: right;margin-right: 10px; font-weight: 550;"><strong> :سبب الاستخراج</strong></p>
+		<p class="data" style="float: right;"><?=$row["reason"]?></p>
 	</div>
+	<?php } ?>
+	<?php if(!empty($row["destination"])){ ?>
 	<div class="field">
-		<p class="label" style="float: left;margin-right: 10px; font-weight: 550;">Student ID:</p>
-		<p class="data"><?=$row["student id"]?></p>
+		<p class="label" style="float: right;margin-right: 10px; font-weight: 550;"><strong> :الجهة الموجهة إليها</strong></p>
+		<p class="data" style="float: right;"><?=$row["destination"]?></p>
 	</div>
+	<?php } ?>
+	<?php if(!empty($row["mobile_number"])){ ?>
+	<div class="field">
+		<p class="label" style="float: right;margin-right: 10px; font-weight: 550;"><strong> :رقم الهاتف</strong></p>
+		<p class="data" style="float: right;"><?=$row["mobile_number"]?></p>
+	</div>
+	<?php } ?>
+	<?php if(!empty($row["year"])){ ?>
+	<div class="field">
+		<p class="label" style="float: right;margin-right: 10px; font-weight: 550;"><strong> :الفرقة</strong></p>
+		<p class="data" style="float: right;"><?=$row["year"]?></p>
+	</div>
+	<?php } ?>
+	<?php if(!empty($row["grad_year"])){ ?>
+	<div class="field">
+		<p class="label" style="float: right;margin-right: 10px; font-weight: 550;"><strong> :سنة التخرج</strong></p>
+		<p class="data" style="float: right;"><?=$row["grad_year"]?></p>
+	</div>
+	<?php } ?>
+	<?php if(!empty($row["department"])){ ?>
+	<div class="field">
+		<p class="label" style="float: right;margin-right: 10px; font-weight: 550;"><strong> :القسم و الشعبة </strong></p>
+		<p class="data" style="float: right;"><?=$row["department"]?></p>
+	</div>
+	<?php } ?>
+	<?php if(!empty($row["birth_date"])){ ?>
+	<div class="field">
+		<p class="label" style="float: right;margin-right: 10px; font-weight: 550;"><strong> :تاريخ الميلاد</strong></p>
+		<p class="data" style="float: right;"><?=$row["birth_date"]?></p>
+	</div>
+	<?php } ?>
 <!-- 	<div class="field">
 	<img src="images/question.jpg" style="width:400px;height: 200px; display: block; margin:auto;">
 	</div> -->
 </div>
+<?php if($request==1){ ?>
 <form action="controllers/updaterequest.php" method="get">
-<input type="hidden" name="clear" value="0">
-<input type="hidden" name="id" value="<?=$row["id"]?>">
-	<input type="submit" name="next" value="Next" style="background-color: transparent;border-width: 3px; letter-spacing: 2px; ;border-radius: 7px; border-color: brown;display: block;margin: auto; color: black; font-weight: 550; font-size: 18px; padding-bottom: 10px; padding-top: 10px; padding-right: 15px; padding-left: 15px; margin-top: 10px; ">
+	<input type="hidden" name="clear" value="0">
+	<input type="hidden" name="id" value="<?=$row["id"]?>">
+	<input type="submit" name="next" value="Next" style="background-color: transparent;border-width: 3px; letter-spacing: 2px; ;border-
+	radius: 7px; border-color: brown;display: block;margin: auto; color: black; font-weight: 550; font-size: 18px; padding-bottom: 10px; 		padding-top: 10px; padding-right: 15px; padding-left: 15px; margin-top: 10px; ">
 </form>
+<?php } ?>
 </body>
 </html>

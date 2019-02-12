@@ -2,7 +2,8 @@
 session_start();
  if (isset($_SESSION['email'])) {
         
-    
+if (strpos($_SESSION['email'], "@employees.com") !== false) {
+header("location: requests.php");}
 include_once("connect.php");
 
 $query = "SELECT `full name`, `year`, `division`,`student id` FROM   `users` WHERE `email` = '".mysqli_real_escape_string($link, $_SESSION['email'])."' ";

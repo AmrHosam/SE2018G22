@@ -1,7 +1,10 @@
 <?php
 session_start();
 if (isset($_SESSION['email'])) {
-    include_once 'components/navSign.php';} else {header("location: index.php");}
+if (strpos($_SESSION['email'], "@employees.com") !== false) {
+header("location: requests.php");}
+    include_once 'components/navSign.php';} 
+else {header("location: index.php");}
 $_SESSION['new_user'] = true; //session variable to mark old and new users
 include_once './connect.php';
 $student_id = $_SESSION['id']; //this variable will be set by sign-in page

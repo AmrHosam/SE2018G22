@@ -1,14 +1,19 @@
-<?php
+<?php 	
 session_start();
+ if (isset($_SESSION['email'])) {
+        /// your code here
+if (strpos($_SESSION['email'], "@employees.com") !== false) {
+header("location: requests.php");}
+		header("location: homesign.php");
+    }
+else {
 include_once('components/navIndex.php');
 $_SESSION['msg']="";
 if($_SESSION['msg']){
     $error=$_SESSION['msg'];
     echo"<p>$error</p>";
-    
-    
 }
-session_destroy();
+session_destroy();}
 ?>
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
