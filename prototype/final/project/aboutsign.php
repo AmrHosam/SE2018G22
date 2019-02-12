@@ -1,9 +1,12 @@
-<?php
-include_once('components/navIndex.php');
+<?php  session_start();
+if (isset($_SESSION['email'])) {
+
+include_once('components/navSign.php');}
+else {header("location: index.php");}
+
 ?>
 <html>
 <head>
-
  <title>About</title>
 </head>
 <!------ Include the above in your HEAD tag ---------->
@@ -20,7 +23,6 @@ include_once('components/navIndex.php');
 
 body {background-color:#F1F1F1;}
 </style>
-
 
 
 <body>
