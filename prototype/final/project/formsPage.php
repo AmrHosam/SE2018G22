@@ -100,7 +100,7 @@ if ($row = $result->fetch_assoc()) {
                             <option value="بيان درجات">بيان درجات</option>
                             <option value="كارنيه بدل فاقد">كارنيه بدل فاقد</option>
                             <option value="كارنيه مترو">كارنيه مترو</option>
-                            <option value="شهادة قيد">شهادة قيد</option>
+                            <option selected value="شهادة قيد">شهادة قيد</option>
                             <option value="تأجيل امتحانات">تأجيل امتحانات</option>
                             <option value="شهادة تخرج">شهادة تخرج</option>
                         </select>
