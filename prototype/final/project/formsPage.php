@@ -208,14 +208,14 @@ if ($row = $result->fetch_assoc()) {
                 $(function() {
 
                     $('#exampleFormControlSelect1').change(function() {
-                        if ($('#exampleFormControlSelect1').val() == '6') {
+                        if ($('#exampleFormControlSelect1').val() == 'شهادة تخرج') {
                             $('.graduate').show();
                             $('.student').hide();
                             $('.carneh').show();
                             $('.qeid').hide();
                             $('#arabic').removeClass('col-md-6');
                             $('#arabic').addClass('col-md-12');
-                        } else if ($('#exampleFormControlSelect1').val() == '4') {
+                        } else if ($('#exampleFormControlSelect1').val() == 'شهادة قيد') {
                             $('.graduate').hide();
                             $('.student').show();
                             $('.carneh').hide();
