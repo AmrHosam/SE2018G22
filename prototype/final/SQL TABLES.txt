@@ -53,7 +53,7 @@ CREATE TABLE `message` (
   `message` TEXT,
   `post_time` DATETIME DEFAULT NULL,
   PRIMARY KEY  (`message_id`)
-) ENGINE=INNODB DEFAULT CHARSET=latin1;
+)
 
 
 CREATE TABLE `chat` (
