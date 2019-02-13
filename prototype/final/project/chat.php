@@ -240,7 +240,7 @@ else {header("location: index.php");}
 						<p style="text-align: center; font-size: 20px;">Student Affairs Department</p>
 					</div>
 					<hr style="border-color: black !important; border-width: 1.5px;">
-					<div id="div_chat" style="overflow-y: scroll; height: 550px !important;"></div>
+					<div id="div_chat" style="overflow-y: scroll; height: 400px !important;"></div>
 					<hr style="border-color: black !important; border-width: 1.5px;">
 				
 					<form id="frmmain" name="frmmain" onSubmit="return blockSubmit();" style="height: 50px;">

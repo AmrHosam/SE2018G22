@@ -268,7 +268,7 @@ font-weight: 550;
 						<p style="text-align: center;font-size: 20px; font-weight: 650;" id="username">Chat</p>
 					</div>
 					<hr style="border-color: brown !important; border-width: 1.5px;">
-		<div id="div_chat" class="conversation" style="height: 550px;">
+		<div id="div_chat" class="conversation" style="height: 400px;">
 		</div>
 		<form id="frmmain" name="frmmain" onSubmit="return blockSubmit();">
 <!-- 			<input type="button" name="btn_get_chat" id="btn_get_chat" value="Refresh Chat" onClick="javascript:getChatText();" />
