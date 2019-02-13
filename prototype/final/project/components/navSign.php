@@ -257,9 +257,9 @@ if($count==0)
                     </li>
 
 
-<!--                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact Us</a>
-                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="chat.php">Contact Us</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link disabled" href="aboutsign.php">About</a>
                     </li>
