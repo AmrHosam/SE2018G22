@@ -14,6 +14,10 @@ if($count==0)
         {
             display: none;
         }
+        .dropdown-divider
+        {
+            display: none;
+        }
     </style>
     <?php
 }
