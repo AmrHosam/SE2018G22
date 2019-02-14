@@ -60,4 +60,4 @@ CREATE TABLE `chat` (
   `chat_id` INT(11) NOT NULL AUTO_INCREMENT,
   `user_id` INT(10) NOT NULL,
   PRIMARY KEY  (`chat_id`)
-) ENGINE=INNODB DEFAULT CHARSET=latin1;
+)
