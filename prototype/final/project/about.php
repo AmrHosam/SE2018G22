@@ -7,6 +7,11 @@ header("location: requests.php");}
 		header("location: homesign.php");
     }
 else {include_once('components/navIndex.php');}
+if(isset($_SESSION['error']))
+{
+    echo'<script type="text/javascript">alert("That email/password combination could not be found.")</script>';
+    unset($_SESSION['error']);
+}
 ?>
 <html>
 <head>

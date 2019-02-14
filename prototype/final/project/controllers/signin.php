@@ -51,7 +51,10 @@ else{
 	}
 	else {
 		$error = "That email/password combination could not be found.";
-		header("location: ../index.php");
+		$_SESSION['error'] = $error;
+			echo'<script type="text/javascript">
+	javascript:history.go(-1);
+	</script>';
 	}
 }      
 
