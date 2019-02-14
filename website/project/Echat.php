@@ -253,7 +253,7 @@ font-weight: 550;
 	<body onLoad="javascript:startChat();" style="height: 100%;">
 		<div class="container-fluid" style="padding-top: 25px;">
 			<div class="row" style="height: 97%">
-				<div class="col-3" id="left" style="height: 100%;">
+				<div class="col-3" id="left" style="">
 					<div class="bar">
 						<p style="text-align: center; font-size: 20px; font-weight: 650;">Students</p>
 					</div>
