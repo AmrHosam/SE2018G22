@@ -135,6 +135,39 @@ else {header("location: index.php");}
 			::-webkit-scrollbar-thumb:hover {
 			    background: #696969; 
 			}
+
+			    @media only screen and (max-width: 991px) {
+			    	.right
+			    	{
+			    		width: 70% !important;
+			    	}
+    }
+
+    @media only screen and (max-width: 765px) {
+    	.right
+    	{
+    		width: 100% !important;
+    	}
+    	.txt
+    	{
+    		width: 80% !important;
+    	}
+    	.submit
+    	{
+    		width: 15% !important;
+    	}
+    }
+
+    @media only screen and (max-width: 420px) {
+    	.txt
+    	{
+    		width: 70% !important;
+    	}
+    	.submit
+    	{
+    		width: 25% !important;
+    	}
+    }
 		</style>
 		<script language="JavaScript" type="text/javascript">
 			var sendReq = getXmlHttpRequestObject();
@@ -235,7 +268,7 @@ else {header("location: index.php");}
 	<body onLoad="javascript:startChat();" style="height:100%;">
 		<div class="container-fluid" style="margin-top: 10px;">
 			<div class="row" style="width: 100%;">
-				<div id="" class="col-6 right" style="">
+				<div id="" class="right" style="width: 50%; margin-left: 10px;">
 					<div class="bar" style="">
 						<p style="text-align: center; font-size: 20px;">Student Affairs Department</p>
 					</div>
@@ -246,7 +279,7 @@ else {header("location: index.php");}
 					<form id="frmmain" name="frmmain" onSubmit="return blockSubmit();" style="height: 50px;">
 						<!-- <input type="button" name="btn_get_chat" id="btn_get_chat" value="Refresh Chat" onClick="javascript:getChatText();" /> -->
 						<!-- <input type="button" name="btn_reset_chat" id="btn_reset_chat" value="Reset Chat" onClick="javascript:resetChat();" /><br /> -->
-						<input type="text" id="txt_message" name="txt_message"  style="width: 80%;" />
+						<input class="txt" type="text" id="txt_message" name="txt_message"  style="width: 80%;" />
 						<input class="submit" type="button" name="btn_send_chat" id="btn_send_chat" value="Send" onClick="javascript:sendChatText();" />
 					</form>
 				</div>
