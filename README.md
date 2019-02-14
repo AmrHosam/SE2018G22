@@ -14,6 +14,16 @@ supported with online payment as well as mail notifications.
 
 * <a href="SRS/SRS-final.pdf">SRS</a>
 
+
+# Website Link:
+
+  ### Note:
+  * to sign in as an employee you should use (for testing purposes): </br>
+    email: user@employees.com </br>
+    password: 123456
+  * you can sign up in the website if you are a student. </br>
+* <a href="http://www.studentaffairs.tk">Student Affairs</a>
+
 ### Team Members:
 
 Code          | Name	     | Section
