@@ -152,10 +152,10 @@ if($count==0)
     }
  @media only screen and (max-width: 991px) {
                          .nav-item{
-                color: black;
-                         border-bottom-color: #800000;
-              border: solid;
-                background-color:white;
+                          border: solid;
+                         border-color: white;
+             
+                background-color:#800000;
                    opacity: 1; 
                    z-index: 5;
           }
@@ -244,7 +244,7 @@ if($count==0)
 
     <body>
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a><img src="images/studentAfaairs_icon.png" class="smallImge"></a>
+            <a style="height: 100%"><img style="height: 100%;" src="images/studentAfaairs_icon.png" class="smallImge"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

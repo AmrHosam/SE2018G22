@@ -220,7 +220,7 @@
 
     <body>
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a><img src="images/studentAfaairs_icon.png" class="smallImge"></a>
+            <a style="height: 100%;"><img src="images/studentAfaairs_icon.png" style="height: 100%;" class="smallImge"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
