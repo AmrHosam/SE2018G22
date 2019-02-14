@@ -193,8 +193,12 @@ if ($row = $result->fetch_assoc()) {
                                 </div>
                                 <input name="birth_date" type="date" class="form-control" id="inputZip" required>
                             </div>
+                            <div class="form-group col-md-3">
+                                <div class="form-group row edge" dir="rtl">
+                                    <a type="button" onclick="window.open('https://www.paymestore.co/C57371');" class="btn btn-primary" style="background-color: grey; border-style: none; color: white;">ادفع الان</a>
+                                </div>
+                            </div>
                         </div>
-
 
                         <div class="form-group row edge" dir="rtl">
                             <button type="submit" class="btn btn-primary">تأكيد</button>
