@@ -272,7 +272,7 @@ if($count==0)
                         <span class="badge badge-light"><?=$count?></span>
                         <?php }?>
                     </a>
-                    <div style="" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div style="z-index: 10 !important;" class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <?php
 if (strpos($_SESSION['email'], "@employees.com") === false) {
     $query = "SELECT type FROM `requests` WHERE `state` = 1 AND  `seen` = 0 AND student_id ='" . $_SESSION['id'] . "'";
@@ -289,7 +289,7 @@ if (strpos($_SESSION['email'], "@employees.com") === false) {
                         <a id="clear" class="dropdown-item" style="text-align: center;" href="controllers/updaterequest.php?clear=1">Clear All</a>
                     </div>
                 </li>
-                <li style="list-style-type: none; margin-right: 30px;" class="nav-item dropdown" style="">
+                <li style="list-style-type: none; margin-right: 30px; z-index: 1;" class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                         Welcome
