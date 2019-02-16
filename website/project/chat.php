@@ -194,7 +194,7 @@ else {header("location: index.php");}
 			//Gets the current messages from the server
 			function getChatText() {
 				if (receiveReq.readyState == 4 || receiveReq.readyState == 0) {
-					receiveReq.open("GET", 'controllers/getChat.php?chat=1&last=' + lastMessage, true);
+					receiveReq.open("GET", 'getChat.php?chat=1&last=' + lastMessage, true);
 					receiveReq.onreadystatechange = handleReceiveChat; 
 					receiveReq.send(null);
 				}			
@@ -206,7 +206,7 @@ else {header("location: index.php");}
 					return;
 				}
 				if (sendReq.readyState == 4 || sendReq.readyState == 0) {
-					sendReq.open("POST", 'controllers/getChat.php?chat=1&last=' + lastMessage, true);
+					sendReq.open("POST", 'getChat.php?chat=1&last=' + lastMessage, true);
 					sendReq.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
 					sendReq.onreadystatechange = handleSendChat; 
 					var param = 'message=' + document.getElementById('txt_message').value;
@@ -250,7 +250,7 @@ else {header("location: index.php");}
 			//This cleans out the database so we can start a new chat session.
 			// function resetChat() {
 			// 	if (sendReq.readyState == 4 || sendReq.readyState == 0) {
-			// 		sendReq.open("POST", 'controllers/getChat.php?chat=1&last=' + lastMessage, true);
+			// 		sendReq.open("POST", 'getChat.php?chat=1&last=' + lastMessage, true);
 			// 		sendReq.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
 			// 		sendReq.onreadystatechange = handleResetChat; 
 			// 		var param = 'action=reset';

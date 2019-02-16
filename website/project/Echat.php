@@ -177,7 +177,7 @@ font-weight: 550;
 			function getChatText() {
 				if (receiveReq.readyState == 4 || receiveReq.readyState == 0) {
 					//alert(id);
-					receiveReq.open("GET", 'controllers/EgetChat.php?chat='+user_id+'&last=' + lastMessage, true);
+					receiveReq.open("GET", 'EgetChat.php?chat='+user_id+'&last=' + lastMessage, true);
 					receiveReq.onreadystatechange = handleReceiveChat; 
 					receiveReq.send(null);
 				}			
@@ -189,7 +189,7 @@ font-weight: 550;
 					return;
 				}
 				if (sendReq.readyState == 4 || sendReq.readyState == 0) {
-					sendReq.open("POST", 'controllers/EgetChat.php?chat=1&last=' + lastMessage, true);
+					sendReq.open("POST", 'EgetChat.php?chat=1&last=' + lastMessage, true);
 					sendReq.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
 					sendReq.onreadystatechange = handleSendChat; 
 					var param = 'message=' + document.getElementById('txt_message').value;
@@ -235,7 +235,7 @@ font-weight: 550;
 			//This cleans out the database so we can start a new chat session.
 			// function resetChat() {
 			// 	if (sendReq.readyState == 4 || sendReq.readyState == 0) {
-			// 		sendReq.open("POST", 'controllers/EgetChat.php?chat=1&last=' + lastMessage, true);
+			// 		sendReq.open("POST", 'EgetChat.php?chat=1&last=' + lastMessage, true);
 			// 		sendReq.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
 			// 		sendReq.onreadystatechange = handleResetChat; 
 			// 		var param = 'action=reset';
