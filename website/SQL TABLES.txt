@@ -45,6 +45,15 @@ INDEX(student_id),
 CONSTRAINT FOREIGN KEY (student_id) REFERENCES students (student_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
+
+CREATE TABLE courses(
+id INT NOT NULL AUTO_INCREMENT,
+duration VARCHAR(16) NOT NULL,
+name TEXT NOT NULL,
+primary key(course_id),
+);
+
+
 CREATE TABLE `message` (
   `message_id` INT(11) NOT NULL AUTO_INCREMENT,
   `chat_id` INT(11) NOT NULL DEFAULT '0',
